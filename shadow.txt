@@ -1,0 +1,1017 @@
+#include <ntddk.h>
+//辛苦了几周的成果
+
+
+typedef struct ServiceDescriptorEntry {
+  PVOID *ServiceTableBase;
+  ULONG *ServiceCounterTableBase; //Used only in checked build
+  ULONG NumberOfService;   //Null
+  PVOID *ParamTableBase;
+} ServiceDescriptorTableEntry, *PServiceDescriptorTableEntry;
+
+PServiceDescriptorTableEntry KeServiceDescriptorTableShadow;
+
+__declspec(dllimport) _stdcall KeAddSystemServiceTable(PVOID, PVOID, PVOID, PVOID, PVOID);
+__declspec(dllimport)  ServiceDescriptorTableEntry KeServiceDescriptorTable;
+
+//---------------------------------------------------
+
+typedef enum _SYSTEM_INFORMATION_CLASS {
+SystemBasicInformation, // 0 Y N
+SystemProcessorInformation, // 1 Y N
+SystemPerformanceInformation, // 2 Y N
+SystemTimeOfDayInformation, // 3 Y N
+SystemNotImplemented1, // 4 Y N
+SystemProcessesAndThreadsInformation, // 5 Y N
+SystemCallCounts, // 6 Y N
+SystemConfigurationInformation, // 7 Y N
+SystemProcessorTimes, // 8 Y N
+SystemGlobalFlag, // 9 Y Y
+SystemNotImplemented2, // 10 Y N
+SystemModuleInformation, // 11 Y N
+SystemLockInformation, // 12 Y N
+SystemNotImplemented3, // 13 Y N
+SystemNotImplemented4, // 14 Y N
+SystemNotImplemented5, // 15 Y N
+SystemHandleInformation, // 16 Y N
+SystemObjectInformation, // 17 Y N
+SystemPagefileInformation, // 18 Y N
+SystemInstructionEmulationCounts, // 19 Y N
+SystemInvalidInfoClass1, // 20
+SystemCacheInformation, // 21 Y Y
+SystemPoolTagInformation, // 22 Y N
+SystemProcessorStatistics, // 23 Y N
+SystemDpcInformation, // 24 Y Y
+SystemNotImplemented6, // 25 Y N
+SystemLoadImage, // 26 N Y
+SystemUnloadImage, // 27 N Y
+SystemTimeAdjustment, // 28 Y Y
+SystemNotImplemented7, // 29 Y N
+SystemNotImplemented8, // 30 Y N
+SystemNotImplemented9, // 31 Y N
+SystemCrashDumpInformation, // 32 Y N
+SystemExceptionInformation, // 33 Y N
+SystemCrashDumpStateInformation, // 34 Y Y/N
+SystemKernelDebuggerInformation, // 35 Y N
+SystemContextSwitchInformation, // 36 Y N
+SystemRegistryQuotaInformation, // 37 Y Y
+SystemLoadAndCallImage, // 38 N Y
+SystemPrioritySeparation, // 39 N Y
+SystemNotImplemented10, // 40 Y N
+SystemNotImplemented11, // 41 Y N
+SystemInvalidInfoClass2, // 42
+SystemInvalidInfoClass3, // 43
+SystemTimeZoneInformation, // 44 Y N
+SystemLookasideInformation, // 45 Y N
+SystemSetTimeSlipEvent, // 46 N Y
+SystemCreateSession, // 47 N Y
+SystemDeleteSession, // 48 N Y
+SystemInvalidInfoClass4, // 49
+SystemRangeStartInformation, // 50 Y N
+SystemVerifierInformation, // 51 Y Y
+SystemAddVerifier, // 52 N Y
+SystemSessionProcessesInformation // 53 Y N
+} SYSTEM_INFORMATION_CLASS;
+
+typedef struct _SYSTEM_MODULE_INFORMATION { // Information Class 11
+ULONG Reserved[2];
+PVOID Base;
+ULONG Size;
+ULONG Flags;
+USHORT Index;
+USHORT Unknown;
+USHORT LoadCount;
+USHORT ModuleNameOffset;
+CHAR ImageName[256];
+} SYSTEM_MODULE_INFORMATION, *PSYSTEM_MODULE_INFORMATION;
+
+typedef struct _SYSTEM_HANDLE_INFORMATION 
+{
+  ULONG ProcessId;
+  UCHAR ObjectTypeNumber;
+  UCHAR Flags;
+  USHORT Handle;
+  PVOID Object;
+  ACCESS_MASK GrantedAccess;
+} _SYSTEM_HANDLE_INFORMATION, *P_SYSTEM_HANDLE_INFORMATION;
+
+typedef struct _SYSTEM_HANDLE_INformATION_EX {
+  ULONG NumberOfHandles;
+  _SYSTEM_HANDLE_INFORMATION Information[1];
+} _SYSTEM_HANDLE_INFORMATION_EX, *PSYSTEM_HANDLE_INFORMATION_EX;
+
+
+
+
+
+
+
+//-----------------------
+typedef NTSTATUS (*NTGDIGETPIXEL)
+(
+);
+
+NTGDIGETPIXEL               g_OriginalNtGdiGetPixel;
+
+
+//-----------------API申明-----------
+
+PVOID GetUndocumentFunctionAdress();
+VOID Hook();
+VOID Unhook();
+VOID WPOFF(VOID);
+VOID WPON(VOID);
+VOID InitCallNumber();
+VOID OnUnload(IN PDRIVER_OBJECT DriverObject);
+
+//--------shadow-----------
+PVOID GetInfoTable(ULONG ATableType);
+HANDLE GetCsrPid();
+VOID KeAttPro();
+VOID HookShadow();
+VOID UnhookShadow();
+ULONG MyNtGdiGetPixel();
+
+NTSTATUS PsLookupProcessByProcessId(IN ULONG ulProcId, OUT PEPROCESS * pEProcess);
+
+NTSTATUS ZwQuerySystemInformation( 
+    IN ULONG SystemInformationClass, 
+    IN PVOID SystemInformation, 
+    IN ULONG SystemInformationLength, 
+    OUT PULONG ReturnLength);
+
+NTSTATUS ZwDuplicateObject(
+                 IN HANDLE                 SourceProcessHandle,
+                 IN PHANDLE                 SourceHandle,
+                 IN HANDLE                 TargetProcessHandle,
+                 OUT PHANDLE               TargetHandle,
+                 IN ACCESS_MASK             DesiredAccess OPTIONAL,
+                 IN BOOLEAN                 InheritHandle,
+                 IN ULONG                   Options );
+
+NTSTATUS ZwQueryObject(
+    IN HANDLE                ObjectHandle,
+    IN ULONG                 ObjectInformationClass,
+    OUT PVOID                ObjectInformation,
+    IN ULONG                 ObjectInformationLength,
+    OUT PULONG               ReturnLength OPTIONAL);
+
+
+NTSTATUS PsLookupProcessByProcessId(
+       IN ULONG               ulProcId, 
+       OUT PEPROCESS *        pEProcess);
+
+
+NTSTATUS KeAttachProcess(PEPROCESS pPeb);
+NTSTATUS KeDetachProcess();
+
+//--------shadow-----------
+
+
+
+
+
+
+//---------------全局变量------------
+PEPROCESS crsEProc;
+
+ULONG JmpAddress;
+ULONG JmpAddress1;
+ULONG JmpAddress2;
+ULONG JmpAddress3;
+ULONG JmpAddress4;
+ULONG JmpAddress5;
+ULONG JmpAddress6;
+ULONG JmpAddress7;
+
+ULONG JmpAddRead_xp;
+ULONG JmpAddWrite_xp;
+ULONG JmpAddOpen_xp;
+
+//--------shadow-----------
+ULONG JmpAddress_Shadow_GdiGetPixel;
+//--------shadow-----------
+
+ULONG OldServiceAddress;
+ULONG OldServiceAddress1;
+ULONG OldServiceAddress2;
+ULONG OldServiceAddress3;
+ULONG OldServiceAddress4;
+ULONG Adds;
+ULONG retAddr1;  
+ULONG retAddr;  
+ULONG retAddr2;  
+
+ULONG retAddrRwpm_Xp;
+ULONG retAddrIoCF_Xp;
+
+
+//----------------------定义常量---------
+ULONG NtOpenProcess_CallNumber = 0;   //服号
+ULONG NtReadVirtualMemory_CallNumber = 0;   //服号
+ULONG NtWriteVirtualMemory_CallNumber = 0;   //服号
+ULONG NtClose_CallNumber = 0; 
+ULONG NtDeviceIoControlFile_CallNumber = 0; 
+
+//--------shadow-----------
+ULONG NtGdiGetPixel_callnumber = 0;
+//--------shadow-----------
+
+#define DELAY_ONE_MICROSECOND (-10)
+#define DELAY_ONE_MILLISECOND (DELAY_ONE_MICROSECOND*1000)
+
+
+
+
+
+//------------------------函数部分---------------
+
+//-----------------shadow--------------
+unsigned int getAddressOfShadowTable()
+{
+    unsigned int i;
+    unsigned char *p;
+    unsigned int dwordatbyte;
+
+    p = (unsigned char*) KeAddSystemServiceTable;
+
+    for(i = 0; i < 4096; i++, p++)
+    {
+        __try
+        {
+            dwordatbyte = *(unsigned int*)p;
+        }
+        __except(EXCEPTION_EXECUTE_HANDLER)
+        {
+            return 0;
+        }
+
+        if(MmIsAddressValid((PVOID)dwordatbyte))
+        {
+            if(memcmp((PVOID)dwordatbyte, &KeServiceDescriptorTable, 16) == 0)
+            {
+                if((PVOID)dwordatbyte == &KeServiceDescriptorTable)
+                {
+                    continue;
+                }
+
+                return dwordatbyte;
+            }
+        }
+    }
+
+    return 0;
+}
+
+ULONG getShadowTable()
+{
+    KeServiceDescriptorTableShadow = (PServiceDescriptorTableEntry) getAddressOfShadowTable();
+
+    if(KeServiceDescriptorTableShadow == NULL)
+    {  
+        return FALSE;
+    }
+    else
+    {
+        return TRUE;
+    }
+} 
+
+PVOID GetInfoTable(ULONG ATableType)
+{
+  ULONG mSize = 0x4000;
+  PVOID mPtr = NULL;
+  NTSTATUS St;
+  do
+  {
+     mPtr = ExAllocatePool(PagedPool, mSize);
+     memset(mPtr, 0, mSize);
+     if (mPtr)
+     {
+        St = ZwQuerySystemInformation(ATableType, mPtr, mSize, NULL);
+     } else return NULL;
+     if (St == STATUS_INFO_LENGTH_MISMATCH)
+     {
+        ExFreePool(mPtr);
+        mSize = mSize * 2;
+     }
+  } while (St == STATUS_INFO_LENGTH_MISMATCH);
+  if (St == STATUS_SUCCESS) return mPtr;
+  ExFreePool(mPtr);
+  return NULL;
+}
+
+//--------------------下面这个函数必须的--------
+HANDLE GetCsrPid()
+{
+  HANDLE Process, hObject;
+  HANDLE CsrId = (HANDLE)0;
+  OBJECT_ATTRIBUTES obj;
+  CLIENT_ID cid;
+  UCHAR Buff[0x100];
+  POBJECT_NAME_INFORMATION ObjName = (PVOID)&Buff;
+  PSYSTEM_HANDLE_INFORMATION_EX Handles;
+  ULONG r;
+
+  Handles = GetInfoTable(0x10); //SystemHandleInformation =  0x10
+
+  if (!Handles) return CsrId;
+
+  for (r = 0; r < Handles->NumberOfHandles; r++)
+  {
+    if (Handles->Information[r].ObjectTypeNumber == 21) //Port object
+    {
+      InitializeObjectAttributes(&obj, NULL, OBJ_KERNEL_HANDLE, NULL, NULL);
+
+      cid.UniqueProcess = (HANDLE)Handles->Information[r].ProcessId;
+      cid.UniqueThread = 0;
+
+      if (NT_SUCCESS(NtOpenProcess(&Process, PROCESS_DUP_HANDLE, &obj, &cid)))
+      {
+        if (NT_SUCCESS(ZwDuplicateObject(Process, (HANDLE)Handles->Information[r].Handle,NtCurrentProcess(), &hObject, 0, 0, DUPLICATE_SAME_ACCESS)))
+        {
+          if (NT_SUCCESS(ZwQueryObject(hObject, 1, ObjName, 0x100, NULL))) //ObjectNameInformation == 1
+          {
+            if (ObjName->Name.Buffer && !wcsncmp(L"\\Windows\\ApiPort", ObjName->Name.Buffer, 20))
+            {
+              CsrId = (HANDLE)Handles->Information[r].ProcessId;
+            } 
+          }
+
+          ZwClose(hObject);
+        }
+
+        ZwClose(Process);
+      }
+    }
+  }
+
+  ExFreePool(Handles);
+  return CsrId;
+}
+
+BOOLEAN Sleep(ULONG MillionSecond)
+{
+  NTSTATUS st;
+  LARGE_INTEGER DelayTime;
+  DelayTime = RtlConvertLongToLargeInteger(-10000*MillionSecond);
+  st=KeDelayExecutionThread( KernelMode, FALSE, &DelayTime );
+  return (NT_SUCCESS(st));
+}
+
+
+
+//-----------------shadow--------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PVOID
+GetUndocumentFunctionAdress()
+{
+
+  ULONG size,index;
+  PULONG buf;
+      ULONG i;
+  PSYSTEM_MODULE_INFORMATION module;
+  PVOID driverAddress=0;
+     ULONG ntosknlBase;
+  ULONG ntosknlEndAddr;
+  ULONG curAddr;
+  NTSTATUS status;
+
+  ULONG  code1_sp2=0x0035ff64,code2_sp2=0x8b000000,code3_sp2=0x89102444,code4_sp2=0x8d10246c;
+  ULONG  code1_cal=0x8908758b,code2_cal=0xffff08b5,code3_cal=0x89db33ff,code4_cal=0xffff149d;
+
+  ULONG  code1_Fil=0x33207d8b,code2_Fil=0xd85d89db,code3_Fil=0x831c758b,code4_Fil=0x758903e6;
+  ULONG  code1_rwm=0x66f845dd,code2_rwm=0x7f087d81,code3_rwm=0xd9037402,code4_rwm=0xc3c9086d;
+
+  ULONG  code1_IoF=0x5d89db33,code2_IoF=0x1c758be0,code3_IoF=0x8903e683,code4_IoF=0xa164d475;
+
+
+  ZwQuerySystemInformation(SystemModuleInformation,&size, 0, &size);
+
+  if(NULL==(buf = (PULONG)ExAllocatePool(PagedPool, size)))
+  {
+    DbgPrint("failed alloc memory failed  \n");
+    return 0;
+  }
+     
+  status=ZwQuerySystemInformation(SystemModuleInformation,buf, size , 0);
+  if(!NT_SUCCESS( status ))
+  {
+             DbgPrint("failed  query\n");
+          return 0;
+  }
+
+  module = (PSYSTEM_MODULE_INFORMATION)(( PULONG )buf + 1);
+  
+  ntosknlEndAddr=(ULONG)module->Base+(ULONG)module->Size;
+  ntosknlBase=(ULONG)module->Base;
+  curAddr=ntosknlBase;
+  ExFreePool(buf);
+
+  for (i=curAddr;i<=ntosknlEndAddr;i++)
+    {
+      if ((*((ULONG *)i)==code1_sp2)&&(*((ULONG *)(i+4))==code2_sp2)&&(*((ULONG *)(i+8))==code3_sp2)&&(*((ULONG *)(i+12))==code4_sp2)) 
+       
+      {
+            
+        retAddr = i-5;  //为什么-5 BECAUSE..函数第一句5个字节.
+              
+      }
+
+      if ((*((ULONG *)i)==code1_cal)&&(*((ULONG *)(i+4))==code2_cal)&&(*((ULONG *)(i+8))==code3_cal)&&(*((ULONG *)(i+12))==code4_cal)) 
+       
+      {
+            
+        retAddr1 = i-0xF;
+              
+      }
+
+      if ((*((ULONG *)i)==code1_Fil)&&(*((ULONG *)(i+4))==code2_Fil)&&(*((ULONG *)(i+8))==code3_Fil)&&(*((ULONG *)(i+12))==code4_Fil)) 
+       
+      {
+            
+        retAddr2 = i-0xC;
+            
+      }
+      if ((*((ULONG *)i)==code1_rwm)&&(*((ULONG *)(i+4))==code2_rwm)&&(*((ULONG *)(i+8))==code3_rwm)&&(*((ULONG *)(i+12))==code4_rwm)) 
+       
+      {
+            
+        retAddrRwpm_Xp = i+0x10;
+            
+      }
+      if ((*((ULONG *)i)==code1_IoF)&&(*((ULONG *)(i+4))==code2_IoF)&&(*((ULONG *)(i+8))==code3_IoF)&&(*((ULONG *)(i+12))==code4_IoF)) 
+       
+      {
+            
+        retAddrIoCF_Xp = i-0xC;
+            
+      }
+
+  }
+return 0;
+
+}
+
+//------------------暂停函数----------------
+
+VOID MySleep(LONG msec)
+{
+LARGE_INTEGER my_interval;
+my_interval.QuadPart = DELAY_ONE_MILLISECOND;
+my_interval.QuadPart *= msec;
+KeDelayExecutionThread(KernelMode,0,&my_interval);
+}
+
+//--------------获取服务号----------------
+VOID InitCallNumber()
+{
+  ULONG majorVersion, minorVersion;
+  PsGetVersion( &majorVersion, &minorVersion, NULL, NULL );
+
+  if ( majorVersion == 5 && minorVersion == 1 )
+      {
+    DbgPrint("Running on Windows Xp");
+
+    NtOpenProcess_CallNumber = 0x7A;
+    NtReadVirtualMemory_CallNumber =0xBA;
+    NtWriteVirtualMemory_CallNumber = 0x115;
+    NtClose_CallNumber = 0x19; 
+    NtDeviceIoControlFile_CallNumber = 0x42; 
+
+    NtGdiGetPixel_callnumber = 0xBF;
+  }
+
+  else if ( majorVersion == 6 && minorVersion == 1 )
+  {
+    DbgPrint("Running on Windows 7");
+
+    NtOpenProcess_CallNumber = 0xBE;
+    NtReadVirtualMemory_CallNumber =0x115;
+    NtWriteVirtualMemory_CallNumber = 0x18F;
+    NtClose_CallNumber = 0x32; 
+    NtDeviceIoControlFile_CallNumber = 0x6B; 
+
+    NtGdiGetPixel_callnumber = 0xC8;
+  }
+
+
+}
+
+//-------------------下面是处理内存权限-读写开关-----------------
+
+VOID WPOFF(VOID)
+{
+__asm
+{
+cli
+mov eax,cr0
+and eax,not 10000h
+mov cr0,eax
+}
+}
+
+
+
+VOID WPON(VOID)
+{
+__asm
+{
+mov eax,cr0
+or eax,10000h
+mov cr0,eax
+sti
+}
+}
+
+
+
+//------------------------构造自己的函数--------------------
+
+__declspec(naked) NTSTATUS MyNtDeviceIoControlFile(
+    HANDLE FileHandle,
+    HANDLE Event,
+    PIO_APC_ROUTINE ApcRoutine,
+    PVOID ApcContext,
+    PIO_STATUS_BLOCK IoStatusBlock,
+    ULONG IoControlCode,
+    PVOID InputBuffer,
+    ULONG InputBufferLength,
+    PVOID OutputBuffer,
+    ULONG OutputBufferLength
+)
+{
+  __asm{
+
+//  Jmp [JmpAddress7]
+  mov edi, edi
+  push ebp
+  mov ebp, esp
+  push 1
+  push dword ptr [ebp+0x2C]
+  push dword ptr [ebp+0x28]
+  push dword ptr [ebp+0x24]
+  push dword ptr [ebp+0x20]
+  push dword ptr [ebp+0x1C]
+  push dword ptr [ebp+0x18]
+  push dword ptr [ebp+0x14]
+  push dword ptr [ebp+0x10]
+  push dword ptr [ebp+0xC]
+  push dword ptr [ebp+0x8]
+        call retAddr2
+  Jmp [JmpAddress6]
+       }
+}
+
+
+__declspec(naked) NTSTATUS __stdcall MyNtClose(HANDLE ObjectHandle)
+{
+  __asm{
+//  Jmp [JmpAddress4]
+  mov edi, edi
+  push ebp
+  mov ebp, esp
+  Jmp [JmpAddress5]
+       }
+}
+
+
+__declspec(naked) NTSTATUS __stdcall MyNtOpenProcess(PHANDLE ProcessHandle,
+               ACCESS_MASK DesiredAccess,
+               POBJECT_ATTRIBUTES ObjectAttributes,
+               PCLIENT_ID ClientId) 
+{
+ // DbgPrint("NtOpenProcess() called");
+  __asm{
+
+//      jmp     [JmpAddress2]
+
+  mov edi, edi
+  push ebp
+  mov ebp, esp
+  push ecx
+  push ecx
+  mov eax, fs:[0x124]
+  mov al, byte ptr [eax+0x13A]
+  mov ecx, [ebp+0x14]
+  mov edx, [ebp+0x10]
+  mov byte ptr [ebp-0x4], al
+  push [ebp-0x4]
+  push [ebp-0x4]
+  push [ebp+0xC]
+  push [ebp+0x8]
+  call retAddr1
+  jmp     [JmpAddress3]
+//      _emit 0x0F 
+
+
+
+
+  }
+}
+
+__declspec(naked) NTSTATUS __stdcall MyNtReadVirtualMemory(HANDLE ProcessHandle,
+               PVOID BaseAddress,
+               PVOID Buffer,
+               ULONG NumberOfBytesToRead,
+         PULONG NumberOfBytesReaded) 
+{
+  //跳过去
+  __asm
+  {
+//    jmp     [JmpAddress]
+    push    0x18;
+    push 0x832a8B08;
+    call retAddr
+    jmp     [JmpAddress]
+  }
+}
+
+__declspec(naked) NTSTATUS __stdcall MyNtWriteVirtualMemory(HANDLE ProcessHandle,
+               PVOID BaseAddress,
+               PVOID Buffer,
+               ULONG NumberOfBytesToWrite,
+         PULONG NumberOfBytesReaded) 
+{
+  //跳过去
+  __asm
+  {
+//    jmp     [JmpAddress1]
+
+    push    0x18;
+    push 0x832a8AE0;
+    call retAddr
+    jmp     [JmpAddress1] 
+  }
+}
+//-----------------------Xp----------------
+
+__declspec(naked) NTSTATUS MyNtDeviceIoControlFile_Xp(
+    HANDLE FileHandle,
+    HANDLE Event,
+    PIO_APC_ROUTINE ApcRoutine,
+    PVOID ApcContext,
+    PIO_STATUS_BLOCK IoStatusBlock,
+    ULONG IoControlCode,
+    PVOID InputBuffer,
+    ULONG InputBufferLength,
+    PVOID OutputBuffer,
+    ULONG OutputBufferLength
+)
+{
+  __asm{
+
+//  Jmp [JmpAddress7]
+  mov edi, edi
+  push ebp
+  mov ebp, esp
+  push 1
+  push dword ptr [ebp+0x2C]
+  push dword ptr [ebp+0x28]
+  push dword ptr [ebp+0x24]
+  push dword ptr [ebp+0x20]
+  push dword ptr [ebp+0x1C]
+  push dword ptr [ebp+0x18]
+  push dword ptr [ebp+0x14]
+  push dword ptr [ebp+0x10]
+  push dword ptr [ebp+0xC]
+  push dword ptr [ebp+0x8]
+        call retAddrIoCF_Xp
+  Jmp [JmpAddress6]
+
+
+       }
+}
+
+
+__declspec(naked) NTSTATUS __stdcall MyNtOpenProcess_Xp(PHANDLE ProcessHandle,
+               ACCESS_MASK DesiredAccess,
+               POBJECT_ATTRIBUTES ObjectAttributes,
+               PCLIENT_ID ClientId) 
+{
+  __asm{
+//  jmp [JmpAddress2]
+  push 0xC4
+  push 0x804EB0D8
+  call retAddrRwpm_Xp
+        jmp     [JmpAddOpen_xp]
+
+  }
+}
+
+__declspec(naked) NTSTATUS __stdcall MyNtReadVirtualMemory_Xp(HANDLE ProcessHandle,
+               PVOID BaseAddress,
+               PVOID Buffer,
+               ULONG NumberOfBytesToRead,
+         PULONG NumberOfBytesReaded) 
+{
+  //跳过去
+  __asm
+  {
+//    jmp     [JmpAddress]
+    push    0x1C;
+    push    0x832a8B08;
+    call    retAddrRwpm_Xp
+    jmp     [JmpAddRead_xp]
+  }
+}
+
+__declspec(naked) NTSTATUS __stdcall MyNtWriteVirtualMemory_Xp(HANDLE ProcessHandle,
+               PVOID BaseAddress,
+               PVOID Buffer,
+               ULONG NumberOfBytesToWrite,
+         PULONG NumberOfBytesReaded) 
+{
+  //跳过去
+  __asm
+  {
+//    jmp     [JmpAddress1]
+    push    0x1C;
+    push    0x832a8AE0;
+    call    retAddrRwpm_Xp
+    jmp     [JmpAddWrite_xp] 
+  }
+}
+
+//------------------------驱动入口-------------
+NTSTATUS DriverEntry(IN PDRIVER_OBJECT DriverObject,PUNICODE_STRING RegistryPath)
+{
+  DriverObject->DriverUnload = OnUnload;
+  InitCallNumber();
+  getShadowTable();                     //获得shadow表地址
+
+  GetUndocumentFunctionAdress();        //-------获取Call函数地址----------
+
+  KeAttPro();                 //插入进程
+
+  HookShadow();
+
+  Hook();
+  return STATUS_SUCCESS;
+}
+//-------------------卸载---------------------
+VOID OnUnload(IN PDRIVER_OBJECT DriverObject)
+{
+  DbgPrint("驱动卸载中!\n");              //-------无法返回，只能完成--------
+  Unhook();  
+
+  KeAttPro();
+  UnhookShadow();
+                             //-------恢复被HOOK的函数----------
+}
+//--------------Hook部分函数------------------
+VOID Hook()
+{
+  
+  ULONG  Address, Address1, Address2, Address3, Address4;
+
+
+  Address = (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtReadVirtualMemory_CallNumber];
+  Address1 = (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtWriteVirtualMemory_CallNumber];
+  Address2 = (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtOpenProcess_CallNumber];   
+  Address3 = (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtClose_CallNumber];// NtClose
+  Address4 = (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtDeviceIoControlFile_CallNumber];   //IoDeviceFile
+
+  DbgPrint("SSDT_NtClose:0x%08X",Address3);
+
+
+ //-------保存原始函数地址----------
+  OldServiceAddress  = Address;   //保存原来NtReadVirtualMemory的地址
+  OldServiceAddress1 = Address1;
+  OldServiceAddress2 = Address2;
+  OldServiceAddress3 = Address3;
+  OldServiceAddress4 = Address4;
+
+    DbgPrint("备份的地址_NtClose:0x%08X",OldServiceAddress3);
+
+
+
+ //--------绕过INLINE跳转到后面的地址
+
+  JmpAddress  = (ULONG)Address + 0xC;
+  JmpAddress1 = (ULONG)Address1 + 0xC;
+  JmpAddress2 = (ULONG)Address2; 
+  JmpAddress3 = (ULONG)Address2 +0x2D; 
+  JmpAddress4 = (ULONG)Address3; 
+  JmpAddress5 = (ULONG)Address3 +0x5; 
+  JmpAddress6 = (ULONG)Address4 +0x2A; 
+  JmpAddress7 = (ULONG)Address4; 
+
+  JmpAddRead_xp = (ULONG)OldServiceAddress +0xC; 
+  JmpAddWrite_xp = (ULONG)OldServiceAddress1 +0xC; 
+  JmpAddOpen_xp = (ULONG)NtOpenProcess +0xF; 
+
+
+
+
+      DbgPrint("跳转_NtReadVirtualMemory:0x%08X",JmpAddress);
+      DbgPrint("跳转_NtWriteVirtualMemory:0x%08X",JmpAddress1);
+      DbgPrint("跳转_NtOpenProcess:0x%08X",JmpAddress2);
+      DbgPrint("跳转_NtDeviceIoControlFile:0x%08X",JmpAddress3);
+      DbgPrint("跳转_NtClose:0x%08X",JmpAddress4);
+
+
+//------------------时钟控制------------------
+
+//while(1)
+//{ 
+
+//---------------------------------系统判断---------------------
+
+  if ( NtOpenProcess_CallNumber == 0x7A )
+  {
+
+
+  WPOFF();
+    (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtReadVirtualMemory_CallNumber] = (ULONG)MyNtReadVirtualMemory_Xp;
+    (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtWriteVirtualMemory_CallNumber] = (ULONG)MyNtWriteVirtualMemory_Xp;
+    (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtOpenProcess_CallNumber] = (ULONG)MyNtOpenProcess_Xp;
+     (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtClose_CallNumber] = (ULONG)MyNtClose; 
+    (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtDeviceIoControlFile_CallNumber] = (ULONG)MyNtDeviceIoControlFile_Xp; 
+
+
+  WPON(); 
+
+
+      DbgPrint("HOOK地址_NtClose:0x%08X",Address3);
+      DbgPrint("HOOK地址_NtOpenProcess:0x%08X",Address2);
+
+      DbgPrint("HOOK地址_自己的程序_NtClose:0x%08X",(ULONG)MyNtClose);
+  }
+
+  else if ( NtOpenProcess_CallNumber == 0xBE )
+  {
+  WPOFF();
+    (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtReadVirtualMemory_CallNumber] = (ULONG)MyNtReadVirtualMemory;
+    (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtWriteVirtualMemory_CallNumber] = (ULONG)MyNtWriteVirtualMemory;
+    (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtOpenProcess_CallNumber] = (ULONG)MyNtOpenProcess;
+     (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtClose_CallNumber] = (ULONG)MyNtClose; 
+    (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtDeviceIoControlFile_CallNumber] = (ULONG)MyNtDeviceIoControlFile; 
+  WPON(); 
+  }
+
+//MySleep(2000);
+}
+//  }  
+
+
+//--------------------------shadow-------------------------
+
+VOID HookShadow()
+{
+
+  __try
+  {
+    if ((KeServiceDescriptorTableShadow!=NULL)) //读取到地址就保存起来
+    {  
+
+  g_OriginalNtGdiGetPixel = KeServiceDescriptorTableShadow[1].ServiceTableBase[NtGdiGetPixel_callnumber];
+
+  JmpAddress_Shadow_GdiGetPixel = (ULONG)g_OriginalNtGdiGetPixel + 0x5;
+
+
+    DbgPrint("获取Shadow地址成功!\n");
+      DbgPrint("Shadow:0x%08X",g_OriginalNtGdiGetPixel);
+
+    }
+
+
+
+
+    else
+    {
+      DbgPrint("获取地址失败!\n");
+      KeServiceDescriptorTableShadow=NULL; 
+    }
+
+
+
+//-----------------系统判断--------------------
+
+
+
+  if ( NtOpenProcess_CallNumber == 0x7A )
+  {
+
+
+  WPOFF();
+      KeServiceDescriptorTableShadow[1].ServiceTableBase[NtGdiGetPixel_callnumber] = MyNtGdiGetPixel;
+  WPON(); 
+
+  }
+
+  else if ( NtOpenProcess_CallNumber == 0xBE )
+  {
+//  WPOFF();
+//      KeServiceDescriptorTableShadow[1].ServiceTableBase[NtGdiGetPixel_callnumber] = MyNtGdiGetPixel;
+//  WPON(); 
+
+    DbgPrint("暂时没找到WIN7的Shadow Hook解决方案~\n");
+
+  }
+
+
+
+  }
+  __finally
+  {
+      KeDetachProcess(); 
+  }
+
+}
+
+
+VOID KeAttPro()
+{
+  NTSTATUS status;
+
+  status = PsLookupProcessByProcessId((ULONG)GetCsrPid(), &crsEProc);
+  if (!NT_SUCCESS( status ))
+  {
+    DbgPrint("PsLookupProcessByProcessId() error\n");
+    return ;
+  }
+  KeAttachProcess(crsEProc);
+}
+
+
+//////////////////////////////////////////////////////
+VOID Unhook()
+{
+  InitCallNumber();
+
+
+    WPOFF(); 
+
+      (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtReadVirtualMemory_CallNumber] = OldServiceAddress;
+      (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtWriteVirtualMemory_CallNumber] = OldServiceAddress1;
+      (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtOpenProcess_CallNumber] = OldServiceAddress2;
+       (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtClose_CallNumber] = OldServiceAddress3; 
+      (ULONG)KeServiceDescriptorTable.ServiceTableBase[NtDeviceIoControlFile_CallNumber] = OldServiceAddress4; 
+
+    WPON(); 
+
+  DbgPrint("卸载完成\n");
+}
+
+
+VOID UnhookShadow()
+{
+  __try
+  {
+//  WPOFF();
+
+//  KeServiceDescriptorTableShadow[1].ServiceTableBase[NtGdiGetPixel_callnumber] = g_OriginalNtGdiGetPixel;
+
+//  WPON();
+    DbgPrint("暂时没找到WIN7的Shadow Hook解决方案~\n");
+         }
+  __finally
+       {
+     KeDetachProcess();
+     Sleep(50);
+       }
+}
+
+
+
+
+
+
+
+//---------------------shadow自定义函数-----------------------
+__declspec(naked) ULONG MyNtGdiGetPixel()
+{
+  __asm
+  {
+//  jmp g_OriginalNtGdiGetPixel
+
+  mov edi, edi
+  push ebp
+  mov ebp, esp
+
+  jmp JmpAddress_Shadow_GdiGetPixel
+  }
+}

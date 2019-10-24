@@ -1,0 +1,36 @@
+// SwShellExt.idl : SwShellExt 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(SwShellExt.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(F9F3DEED-359B-4299-921F-CA6B08B187D2),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ISafeWallExt : IDispatch{
+};
+[
+	uuid(2E27C9B6-B829-4E8B-859B-3D6E66443E5C),
+	version(1.0),
+]
+library SwShellExtLib
+{
+	importlib("stdole2.tlb");
+	[
+		//用于注册扩展菜单的GUID
+		uuid(0631C202-F576-4046-88F2-EA1B4DC3C71A)		
+	]
+	coclass SafeWallExt
+	{
+		[default] interface ISafeWallExt;
+	};
+};
+
+import "shobjidl.idl";

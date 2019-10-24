@@ -1,0 +1,35 @@
+// swfIcoExt.idl : swfIcoExt 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(swfIcoExt.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(4BB5D528-98B6-43FE-BB81-1BDEC3DEBDFE),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IFileIco : IDispatch{
+};
+[
+	uuid(4725E654-1EBF-4436-AA4C-BDD7C99465AF),
+	version(1.0),
+]
+library swfIcoExtLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(F4E0C1FC-CBCD-4716-A72A-3F4EDEC43B2D)		
+	]
+	coclass FileIco
+	{
+		[default] interface IFileIco;
+	};
+};
+
+import "shobjidl.idl";

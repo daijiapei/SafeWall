@@ -1,0 +1,40 @@
+﻿生成启动时间为 2018-07-27 15:25:45。
+     1>项目“F:\project\Transparent_encryption\SafeWall\SafeWall\SafeWall.vcxproj”在节点 2 上(Build 个目标)。
+     1>StampInf:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\stampinf.exe -d "*" -a "x86" -v "*" -k "1.11" -u "1.11.0" -f Win8Release\SafeWall.inf 
+         Stamping Win8Release\SafeWall.inf [Version] section with DriverVer=07/27/2018,15.25.45.960
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IWin8Release\ /Zi /nologo /W2 /WX- /Ox /Os /Oy- /D _X86_=1 /D i386=1 /D STD_CALL /D WIN32_LEAN_AND_MEAN=1 /D _WIN32_WINNT=0x0602 /D WINVER=0x0602 /D WINNT=1 /D NTDDI_VERSION=0x06020000 /GF /Gm- /Zp8 /GS /Gy /fp:precise /hotpatch /Zc:wchar_t- /Zc:forScope- /GR- /Fo"Win8Release\\" /Fd"Win8Release\vc110.pdb" /Gz /wd4603 /wd4627 /wd4986 /wd4987 /wd4996 /FI"C:\Program Files (x86)\Windows Kits\8.0\Include\Shared\warning.h" /analyze- /errorReport:prompt /kernel -cbstring  /d1nodatetime /d1import_no_registry /d2AllowCompatibleILVersions /d2Zi+ SwTransformFile.cpp
+         SwTransformFile.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\project\Transparent_encryption\SafeWall\Win8Release\SafeWall.sys" /VERSION:"6.2" /INCREMENTAL:NO /NOLOGO /WX /FUNCTIONPADMIN:5 /SECTION:"INIT,d" "C:\Program Files (x86)\Windows Kits\8.0\lib\win8\KM\x86\BufferOverflowFastFailK.lib" "C:\Program Files (x86)\Windows Kits\8.0\lib\win8\KM\x86\ntoskrnl.lib" "C:\Program Files (x86)\Windows Kits\8.0\lib\win8\KM\x86\hal.lib" "C:\Program Files (x86)\Windows Kits\8.0\lib\win8\KM\x86\wmilib.lib" /NODEFAULTLIB /MANIFEST:NO /DEBUG /PDB:"F:\project\Transparent_encryption\SafeWall\Win8Release\SafeWall.pdb" /SUBSYSTEM:NATIVE,"6.02" /Driver /OPT:REF /OPT:ICF /ENTRY:"DriverEntry" /RELEASE /IMPLIB:"F:\project\Transparent_encryption\SafeWall\Win8Release\SafeWall.lib" /MERGE:"_TEXT=.text;_PAGE=PAGE" /MACHINE:X86 /SAFESEH /kernel /IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221 /osversion:6.2 /pdbcompress /debugtype:pdata Win8Release\DriverDirectoryControlDispatchRoutine.obj
+         Win8Release\DriverQueryInformationDispatchRoutine.obj
+         Win8Release\DriverSetInformationDispatchRoutin.obj
+         Win8Release\FileSytemAttachToDevice.obj
+         Win8Release\CompletionRoutine.obj
+         Win8Release\DriverCleanUpDispatchRoutine.obj
+         Win8Release\DriverCloseDispatchRoutine.obj
+         Win8Release\DriverControlDispatchRoutine.obj
+         Win8Release\DriverCreateDispatchRoutine.obj
+         Win8Release\DriverEntry.obj
+         Win8Release\DriverReadDispatchRoutine.obj
+         Win8Release\DriverWriteDispatchRoutine.obj
+         Win8Release\FastIoDispatch.obj
+         Win8Release\FileSystemCacheClear.obj
+         Win8Release\FileSystemDeviceControl.obj
+         Win8Release\GetObjectInformation.obj
+         Win8Release\GetProcessName.obj
+         Win8Release\IsShadowCopyVolume.obj
+         Win8Release\MyFileSystemRoutine.obj
+         Win8Release\SwProcessList.obj
+         Win8Release\SwTransformCode.obj
+         Win8Release\SwTransformFile.obj
+         Win8Release\SwFileList.obj
+         Win8Release\test.obj
+         Win8Release\UserAccess.obj
+         SafeWall.vcxproj -> F:\project\Transparent_encryption\SafeWall\Win8Release\SafeWall.sys
+     1>已完成生成项目“F:\project\Transparent_encryption\SafeWall\SafeWall\SafeWall.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.35

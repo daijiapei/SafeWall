@@ -1,0 +1,68 @@
+{
+    "password": "system",
+    "extern": {
+        "suffix": "txt;ini;mdf",
+        "Uninclude": null,
+        "asfearea": "D: \\HELLO",
+        "isolation": [
+            [
+                "1",
+                "qq.exe;qqprotect.exe;iexplore.exe;ieuser.exe;maxthon.exe;max.exe;firefox.exe;ttraveler.exe;opera.exe;theworld.exe;theworldxp.exe;myie.exe;chrome.exe;"
+            ],
+            [
+                "2",
+                "outlook.exe;msimn.exe;*mail.exe;thunderbird.exe;dm2005.exe"
+            ],
+            [
+                "3",
+                "*ftp*.exe;FileZilla.exe;flashfxp.exe;putty.exe;Thunder*;flashget.exe;telnet.exe;"
+            ]
+        ]
+    },
+    "client": [
+        {
+            "userid": "user1",
+            "password": "system",
+            "moreExample": "true",
+            "bingNetwork": {
+                "IP": "192.168.1.100",
+                "MAC": "AA: BB: CC: DD: EE: FF"
+            },
+            "access": {
+                "Screenshot": "true",
+                "printf": "true",
+                "netProcess": "true",
+                "SeparateUndefine": "true"
+            },
+            "EffectiveTime": 1000,
+            "netManager": null
+        },
+        {
+            "userid": "user2",
+            "password": "system",
+            "moreExample": "true",
+            "bingNetwork": {
+                "IP": "192.168.1.120",
+                "MAC": "AA: BB: CC: DD: EE: FF"
+            },
+            "access": {
+                "Screenshot": "true",
+                "printf": "true",
+                "netProcess": "true",
+                "SeparateUndefine": "true"
+            },
+            "EffectiveTime": 2000,
+            "netManager": null
+        }
+    ],
+    "IC": [
+        {
+            "useid": "abc",
+            "access": "Decrypt"
+        },
+        {
+            "useid": "wer",
+            "access": "encrypt"
+        }
+    ]
+}

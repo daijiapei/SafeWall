@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="380,600" mininfo="380,600" maxinfo="380,600" caption="0,0,0,32" sizebox="4,4,4,4">
+  <Font id = "0" name="新宋体" size="13" bold="true" italic="false" underline="false"/>
+  <Font id = "1" name="幼圆" size="17" bold="true" />
+  <Font id = "2" name="宋体" size="14" bold="false" />
+  <Font id = "3" name="微软雅黑" size="16" bold="false" />
+  <Font id = "4" name="宋体" size="16" bold="true" />
+  <Default name="Button" value=" height=&quot;35&quot; width=&quot;102&quot; normalimage=&quot;file=&apos;sysres\button_nor.png&apos;&quot; hotimage=&quot;file=&apos;sysres\button_over.png&apos;&quot; pushedimage=&quot;file=&apos;sysres\button_down.png&apos;&quot; "/>
+  <Default name="VScrollBar" value="button1normalimage=&quot;file='sysres\listview\vscroll.png' source='0,0,16,16'&quot; button1hotimage=&quot;file='sysres\listview\vscroll.png' source='0,0,16,16' mask='#FFFF00FF'&quot; button1pushedimage=&quot;file='sysres\listview\vscroll.png' source='0,16,16,32' mask='#FFFF00FF'&quot; button1disabledimage=&quot;file='sysres\listview\vscroll.png' source='0,0,16,16' mask='#FFFF00FF'&quot; button2normalimage=&quot;file='sysres\listview\vscroll.png' source='0,32,16,48' mask='#FFFF00FF'&quot; button2hotimage=&quot;file='sysres\listview\vscroll.png' source='0,32,16,48' mask='#FFFF00FF'&quot; button2pushedimage=&quot;file='sysres\listview\vscroll.png' source='0,48,16,64' mask='#FFFF00FF'&quot; button2disabledimage=&quot;file='sysres\listview\vscroll.png' source='0,32,16,48' mask='#FFFF00FF'&quot; thumbnormalimage=&quot;file='sysres\listview\vscroll.png' source='0,64,16,80' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbhotimage=&quot;file='sysres\listview\vscroll.png' source='0,64,16,80' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbpushedimage=&quot;ffile='sysres\listview\vscroll.png' source='0,64,16,80' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbdisabledimage=&quot;file='sysres\listview\vscroll.png' source='0,64,16,80' corner='2,2,2,2' mask='#FFFF00FF'&quot; railnormalimage=&quot;file='sysres\listview\vscroll.png' source='0,80,16,96' corner='2,2,2,2' mask='#FFFF00FF'&quot; railhotimage=&quot;file='sysres\listview\vscroll.png' source='0,80,16,96' corner='2,2,2,2' mask='#FFFF00FF'&quot; railpushedimage=&quot;file='sysres\listview\vscroll.png' source='0,96,16,112' corner='2,2,2,2' mask='#FFFF00FF'&quot; raildisabledimage=&quot;file='sysres\listview\vscroll.png' source='0,80,16,96' corner='2,2,2,2' mask='#FFFF00FF'&quot; bknormalimage=&quot;file='sysres\listview\vscroll.png' source='0,128,16,146' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkhotimage=&quot;file='sysres\listview\vscroll.png' source='0,128,16,146' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkpushedimage=&quot;file='sysres\listview\vscroll.png' source='0,128,16,146' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkdisabledimage=&quot;file='sysres\listview\vscroll.png' source='0,128,16,146' corner='2,2,2,2' mask='#FFFF00FF'&quot; " />
+  <Default name="HScrollBar" value="button1normalimage=&quot;file='sysres\listview\hscroll.png' source='0,0,16,16'&quot; button1hotimage=&quot;file='sysres\listview\hscroll.png' source='0,0,16,16' mask='#FFFF00FF'&quot; button1pushedimage=&quot;file='sysres\listview\hscroll.png' source='16,0,32,16' mask='#FFFF00FF'&quot; button1disabledimage=&quot;file='sysres\listview\hscroll.png' source='0,0,16,16' mask='#FFFF00FF'&quot; button2normalimage=&quot;file='sysres\listview\hscroll.png' source='32,0,48,16' mask='#FFFF00FF'&quot; button2hotimage=&quot;file='sysres\listview\hscroll.png' source='32,0,48,16' mask='#FFFF00FF'&quot; button2pushedimage=&quot;file='sysres\listview\hscroll.png' source='48,0,64,16' mask='#FFFF00FF'&quot; button2disabledimage=&quot;file='sysres\listview\hscroll.png' source='32,0,48,16' mask='#FFFF00FF'&quot; thumbnormalimage=&quot;file='sysres\listview\hscroll.png' source='128,0,146,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbhotimage=&quot;file='sysres\listview\hscroll.png' source='128,0,146,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbpushedimage=&quot;ffile='sysres\listview\hscroll.png' source='128,0,146,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbdisabledimage=&quot;file='sysres\listview\hscroll.png' source='128,0,146,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; railnormalimage=&quot;file='sysres\listview\hscroll.png' source='80,0,96,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; railhotimage=&quot;file='sysres\listview\hscroll.png' source='80,0,96,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; railpushedimage=&quot;file='sysres\listview\hscroll.png' source='96,0,112,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; raildisabledimage=&quot;file='sysres\listview\hscroll.png' source='80,0,96,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; bknormalimage=&quot;file='sysres\listview\hscroll.png' source='64,0,80,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkhotimage=&quot;file='sysres\listview\hscroll.png' source='64,0,80,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkpushedimage=&quot;file='sysres\listview\hscroll.png' source='128,0,146,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkdisabledimage=&quot;file='sysres\listview\hscroll.png' source='64,0,80,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; " />
+  <VerticalLayout bkcolor="#FFE0E0E0">
+    <!-- 整个窗口的背景色 -->
+    <!-- 标题栏区 -->
+    <HorizontalLayout height="32" bkcolor="#FF29C901" bkcolor2="#FF29C901">
+      <!-- 标题栏背景色 bkcolor、bkcolor2、bkcolor3分别是渐变色的三个值-->
+      <VerticalLayout>
+        <Text text="用户权限设置" textcolor="#FFFFFFFF" font="0" float="true" pos="27,10,170,30"></Text>
+      </VerticalLayout>
+      <!-- 占空位，占据左边所有的空位-->
+      <VerticalLayout width="38">
+        <Button name="closebtn" tooltip="关闭"   float="true" pos="0,6,25,24" width="26" normalimage=" file='sysres\AutoClose.bmp' " hotimage=" file='sysres\FocusClose.bmp' " pushedimage=" file='sysres\FocusClose.bmp' "/>
+      </VerticalLayout>
+    </HorizontalLayout>
+    <!-- 客户区 -->
+    <HorizontalLayout height="40">
+      <Option name="OptUser" textcolor="#22222222" text="用户设置" font="2" float="true" pos="0,0,0,0" width="80" height="30" bkcolor="#FFE0E0E0" group="UserTab" selected="true" />
+      <Option name="OptDevice" text="设备设置" font="2" float="true" pos="100,0,0,0" width="80" height="30" bkcolor="#FFE0E0E0" group="UserTab" />
+      <Option name="OptListen" text="监听设置" font="2" float="true" pos="200,0,0,0" width="80" height="30" bkcolor="#FFE0E0E0" group="UserTab" />
+      <Option name="OptConnect" text="连接设置" font="2" float="true" pos="300,0,0,0" width="80" height="30" bkcolor="#FFE0E0E0" group="UserTab" />
+    </HorizontalLayout>
+    <HorizontalLayout>
+      <TabLayout name="UserTabFrame" bkcolor="#FFF6F6F6">
+        <VerticalLayout name="AccessView">
+          <VerticalLayout>
+            <CheckBox name="chkCutScreen" text="允许截屏" selected="true" float="true" pos="30,10,0,0" width="300" height="20" textpadding="20,4,0,0" align="left" selectedimage="file='sysres/checked.png' dest='0,2,16,18'" normalimage="file='sysres/unchecked.png' dest='0,2,16,18'" />
+            <CheckBox name="chkPrint" text="允许打印" selected="true" float="true" pos="30,40,0,0" width="300" height="20" textpadding="20,4,0,0" align="left" selectedimage="file='sysres/checked.png' dest='0,2,16,18'" normalimage="file='sysres/unchecked.png' dest='0,2,16,18'" />
+            <CheckBox name="chkNetWork" text="允许加密进程访问网络" selected="true" float="true" pos="30,70,0,0" width="300" height="20" textpadding="20,4,0,0" align="left" selectedimage="file='sysres/checked.png' dest='0,2,16,18'" normalimage="file='sysres/unchecked.png' dest='0,2,16,18'" />
+            <CheckBox name="chkMultiple" text="允许多台电脑同时登录" selected="true" float="true" pos="30,100,0,0" width="300" height="20" textpadding="20,4,0,0" align="left" selectedimage="file='sysres/checked.png' dest='0,2,16,18'" normalimage="file='sysres/unchecked.png' dest='0,2,16,18'" />
+            <!--组合-->
+            <Text text="异常断开后可使用时间（分钟）：" textcolor="#FF000000" float="true" pos="30,150,0,0" width="185" height="20"></Text>
+            <Edit name="edTime" font="2" float="true" pos="215, 147, 280, 171" bordercolor="#FF000000" bordersize="1"/>
+            <!--组合-->
+            <Text text="登录密码：" textcolor="#FF000000" float="true" pos="30,190,0,0" width="90" height="20"></Text>
+            <Edit name="edtPassword" font="2" float="true" pos="95, 187, 280, 211" bordercolor="#FF000000" bordersize="1"/>
+            <Text text="确认密码：" textcolor="#FF000000" float="true" pos="30,220,0,0" width="90" height="20"></Text>
+            <Edit name="edtPassword2" font="2" float="true" pos="95, 217, 280, 241" bordercolor="#FF000000" bordersize="1"/>
+            <!--组合-->
+            <Text text="账号绑定以下IP（格式：XXX.XXX.XXX.XXX）：" textcolor="#FF000000" float="true" pos="30,260,0,0" width="350" height="20"></Text>
+            <Edit name="edtIpAddr" font="2" float="true" pos="30, 282, 200, 306" bordercolor="#FF000000" bordersize="1"/>
+            <Text text="账号绑定以下MAC（格式：XX-XX-XX-XX-XX-XX）：" textcolor="#FF000000" float="true" pos="30,330,0,0" width="350" height="20"></Text>
+            <Edit name="edtMAC" font="2" float="true" pos="30, 352, 200, 376" bordercolor="#FF000000" bordersize="1"/>
+            <!--组合-->
+          </VerticalLayout>
+          <VerticalLayout height="60">
+            <Button name="btnSaveAcc" text="保存" font="2" float="true" pos="140, 10, 0, 0" height="35"/>
+            <Button name="btnCancelAcc" text="取消" font="2" float="true" pos="260, 10, 0, 0" height="35"/>
+          </VerticalLayout>
+        </VerticalLayout>
+        <VerticalLayout name="DeviceView">
+          <VerticalLayout>
+            <Label text="软盘：" textcolor="#FF000000" float="true" pos="30,0,100,30"/>
+            <Combo name="cboUserType"  float="true" pos="120,0,310,30" normalimage="file='sysres/Combo_nor.bmp'" hotimage="file='sysres/Combo_over.bmp' " pushedimage="file='sysres/Combo_over.bmp' " >
+              <ListLabelElement text="正常" selected="true" />
+              <ListLabelElement text="只读" />
+              <ListLabelElement text="禁用" />
+            </Combo>
+          </VerticalLayout>
+          <VerticalLayout>
+            <Label text="移动存储器：" textcolor="#FF000000" float="true" pos="30,0,100,30"/>
+            <Combo name="cboUserType" float="true" pos="120,0,310,30" normalimage="file='sysres/Combo_nor.bmp'" hotimage="file='sysres/Combo_over.bmp' " pushedimage="file='sysres/Combo_over.bmp' " >
+              <ListLabelElement text="正常" selected="true" />
+              <ListLabelElement text="只读" />
+              <ListLabelElement text="禁用" />
+            </Combo>
+          </VerticalLayout>
+          <VerticalLayout>
+            <Label text="DVD-CD：" textcolor="#FF000000" float="true" pos="30,0,100,30"/>
+            <Combo name="cboUserType" float="true" pos="120,0,310,30" normalimage="file='sysres/Combo_nor.bmp'" hotimage="file='sysres/Combo_over.bmp' " pushedimage="file='sysres/Combo_over.bmp' " >
+              <ListLabelElement text="正常" selected="true" />
+              <ListLabelElement text="只读" />
+              <ListLabelElement text="禁用" />
+            </Combo>
+          </VerticalLayout>
+          <VerticalLayout>
+            <Label text="网络驱动器：" textcolor="#FF000000" float="true" pos="30,0,100,30"/>
+            <Combo name="cboUserType" float="true" pos="120,0,310,30" normalimage="file='sysres/Combo_nor.bmp'" hotimage="file='sysres/Combo_over.bmp' " pushedimage="file='sysres/Combo_over.bmp' " >
+              <ListLabelElement text="正常" selected="true" />
+              <ListLabelElement text="只读" />
+              <ListLabelElement text="禁用" />
+            </Combo>
+          </VerticalLayout>
+          <VerticalLayout>
+            <Label text="虚拟驱动器：" textcolor="#FF000000" float="true" pos="30,0,100,30"/>
+            <Combo name="cboUserType" float="true" pos="120,0,310,30" normalimage="file='sysres/Combo_nor.bmp'" hotimage="file='sysres/Combo_over.bmp' " pushedimage="file='sysres/Combo_over.bmp' " >
+              <ListLabelElement text="正常" selected="true" />
+              <ListLabelElement text="只读" />
+              <ListLabelElement text="禁用" />
+            </Combo>
+          </VerticalLayout>
+          <VerticalLayout>
+            <Label text="终端驱动器：" textcolor="#FF000000" float="true" pos="30,0,100,30"/>
+            <Combo name="cboUserType" float="true" pos="120,0,310,30" normalimage="file='sysres/Combo_nor.bmp'" hotimage="file='sysres/Combo_over.bmp' " pushedimage="file='sysres/Combo_over.bmp' " >
+              <ListLabelElement text="正常" selected="true" />
+              <ListLabelElement text="只读" />
+              <ListLabelElement text="禁用" />
+            </Combo>
+          </VerticalLayout>
+          <VerticalLayout>
+            <Label text="串行设备：" textcolor="#FF000000" float="true" pos="30,0,100,30"/>
+            <Combo name="cboUserType" float="true" pos="120,0,310,30" normalimage="file='sysres/Combo_nor.bmp'" hotimage="file='sysres/Combo_over.bmp' " pushedimage="file='sysres/Combo_over.bmp' " >
+              <ListLabelElement text="正常" selected="true" />
+              <ListLabelElement text="只读" />
+              <ListLabelElement text="禁用" />
+            </Combo>
+          </VerticalLayout>
+          <VerticalLayout>
+            <Label text="蓝牙设备：" textcolor="#FF000000" float="true" pos="30,0,100,30"/>
+            <Combo name="cboUserType" float="true" pos="120,0,310,30" normalimage="file='sysres/Combo_nor.bmp'" hotimage="file='sysres/Combo_over.bmp' " pushedimage="file='sysres/Combo_over.bmp' " >
+              <ListLabelElement text="正常" selected="true" />
+              <ListLabelElement text="只读" />
+              <ListLabelElement text="禁用" />
+            </Combo>
+          </VerticalLayout>
+          <VerticalLayout>
+            <Label text="USB设备：" textcolor="#FF000000" float="true" pos="30,0,100,30"/>
+            <Combo name="cboUserType" float="true" pos="120,0,310,30" normalimage="file='sysres/Combo_nor.bmp'" hotimage="file='sysres/Combo_over.bmp' " pushedimage="file='sysres/Combo_over.bmp' " >
+              <ListLabelElement text="正常" selected="true" />
+              <ListLabelElement text="只读" />
+              <ListLabelElement text="禁用" />
+            </Combo>
+          </VerticalLayout>
+          <VerticalLayout>
+            <Label text="SCSI设备：" textcolor="#FF000000" float="true" pos="30,0,100,30"/>
+            <Combo name="cboUserType" float="true" pos="120,0,310,30" normalimage="file='sysres/Combo_nor.bmp'" hotimage="file='sysres/Combo_over.bmp' " pushedimage="file='sysres/Combo_over.bmp' " >
+              <ListLabelElement text="正常" selected="true" />
+              <ListLabelElement text="只读" />
+              <ListLabelElement text="禁用" />
+            </Combo>
+          </VerticalLayout>
+          <VerticalLayout height="60">
+            <Button name="btnSaveDev" text="保存" font="2" float="true" pos="140, 10, 0, 0" height="35"/>
+            <Button name="btnCancelDev" text="取消" font="2" float="true" pos="260, 10, 0, 0" height="35"/>
+          </VerticalLayout>
+        </VerticalLayout>
+        <VerticalLayout name="ListenView">
+          <HorizontalLayout>
+            <List float="true" pos="30,10,0,0" width="320" height="360" name="UserList" bkcolor="#FFE0E0E0" inset="0,0,0,0" itemshowhtml="true" vscrollbar="true" hscrollbar="true" headerbkimage="file='sysres\listview\list_header_bg.png'" itemalign="center" itembkcolor="#FFE2DDDF" itemaltbk="true" menu="true">
+              <ListHeader height="24" menu="true">
+                <ListHeaderItem text="端口" width="80" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+                <ListHeaderItem text="协议" width="80" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+                <ListHeaderItem text="内网认证" width="80" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+                <ListHeaderItem text="缓冲加密" width="80" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+              </ListHeader>
+            </List>
+          </HorizontalLayout>
+          <HorizontalLayout height="80">
+            <HorizontalLayout>
+              <Button name="btnAddLsen" text="添加" font="2" float="true" pos="30, 0, 0, 0" height="35"/>
+            </HorizontalLayout>
+            <HorizontalLayout>
+              <Button name="btnChangeLsen" text="修改" font="2" float="true" pos="13, 0, 0, 0" height="35"/>
+            </HorizontalLayout>
+            <HorizontalLayout>
+              <Button name="btnDelLsen" text="删除" font="2" float="true" pos="1, 0, 0, 0" height="35"/>
+            </HorizontalLayout>
+          </HorizontalLayout>
+        </VerticalLayout>
+        <VerticalLayout name="ConnectView">
+          <HorizontalLayout>
+            <List float="true" pos="30,10,0,0" width="320" height="360" name="UserList" bkcolor="#FFE0E0E0" inset="0,0,0,0" itemshowhtml="true" vscrollbar="true" hscrollbar="true" headerbkimage="file='sysres\listview\list_header_bg.png'" itemalign="center" itembkcolor="#FFE2DDDF" itemaltbk="true" menu="true">
+              <ListHeader height="24" menu="true">
+                <ListHeaderItem text="IP地址" width="100" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+                <ListHeaderItem text="端口" width="80" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+                <ListHeaderItem text="协议" width="80" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+                <ListHeaderItem text="缓冲加密" width="80" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+              </ListHeader>
+            </List>
+          </HorizontalLayout>
+          <HorizontalLayout height="80">
+            <HorizontalLayout>
+              <Button name="btnAddConn" text="添加" font="2" float="true" pos="30, 0, 0, 0" height="35"/>
+            </HorizontalLayout>
+            <HorizontalLayout>
+              <Button name="btnChangeConn" text="修改" font="2" float="true" pos="13, 0, 0, 0" height="35"/>
+            </HorizontalLayout>
+            <HorizontalLayout>
+              <Button name="btnDelConn" text="删除" font="2" float="true" pos="1, 0, 0, 0" height="35"/>
+            </HorizontalLayout>
+          </HorizontalLayout>
+        </VerticalLayout>
+      </TabLayout>
+    </HorizontalLayout>
+  </VerticalLayout>
+</Window>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="701,503" mininfo="701,503" maxinfo="701,503" caption="0,0,0,32" sizebox="4,4,4,4">
+  <Font id = "0" name="新宋体" size="13" bold="true" italic="false" underline="false"/>
+  <Font id = "1" name="幼圆" size="17" bold="true" />
+  <Font id = "2" name="宋体" size="14" bold="false" />
+  <Font id = "3" name="微软雅黑" size="16" bold="false" />
+  <Font id = "4" name="宋体" size="16" bold="true" />
+  <Default name="Button" value=" height=&quot;35&quot; width=&quot;102&quot; normalimage=&quot;file=&apos;sysres\button_nor.png&apos;&quot; hotimage=&quot;file=&apos;sysres\button_over.png&apos;&quot; pushedimage=&quot;file=&apos;sysres\button_down.png&apos;&quot; "/>
+  <Default name="VScrollBar" value="button1normalimage=&quot;file='sysres\listview\vscroll.png' source='0,0,16,16'&quot; button1hotimage=&quot;file='sysres\listview\vscroll.png' source='0,0,16,16' mask='#FFFF00FF'&quot; button1pushedimage=&quot;file='sysres\listview\vscroll.png' source='0,16,16,32' mask='#FFFF00FF'&quot; button1disabledimage=&quot;file='sysres\listview\vscroll.png' source='0,0,16,16' mask='#FFFF00FF'&quot; button2normalimage=&quot;file='sysres\listview\vscroll.png' source='0,32,16,48' mask='#FFFF00FF'&quot; button2hotimage=&quot;file='sysres\listview\vscroll.png' source='0,32,16,48' mask='#FFFF00FF'&quot; button2pushedimage=&quot;file='sysres\listview\vscroll.png' source='0,48,16,64' mask='#FFFF00FF'&quot; button2disabledimage=&quot;file='sysres\listview\vscroll.png' source='0,32,16,48' mask='#FFFF00FF'&quot; thumbnormalimage=&quot;file='sysres\listview\vscroll.png' source='0,64,16,80' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbhotimage=&quot;file='sysres\listview\vscroll.png' source='0,64,16,80' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbpushedimage=&quot;ffile='sysres\listview\vscroll.png' source='0,64,16,80' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbdisabledimage=&quot;file='sysres\listview\vscroll.png' source='0,64,16,80' corner='2,2,2,2' mask='#FFFF00FF'&quot; railnormalimage=&quot;file='sysres\listview\vscroll.png' source='0,80,16,96' corner='2,2,2,2' mask='#FFFF00FF'&quot; railhotimage=&quot;file='sysres\listview\vscroll.png' source='0,80,16,96' corner='2,2,2,2' mask='#FFFF00FF'&quot; railpushedimage=&quot;file='sysres\listview\vscroll.png' source='0,96,16,112' corner='2,2,2,2' mask='#FFFF00FF'&quot; raildisabledimage=&quot;file='sysres\listview\vscroll.png' source='0,80,16,96' corner='2,2,2,2' mask='#FFFF00FF'&quot; bknormalimage=&quot;file='sysres\listview\vscroll.png' source='0,128,16,146' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkhotimage=&quot;file='sysres\listview\vscroll.png' source='0,128,16,146' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkpushedimage=&quot;file='sysres\listview\vscroll.png' source='0,128,16,146' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkdisabledimage=&quot;file='sysres\listview\vscroll.png' source='0,128,16,146' corner='2,2,2,2' mask='#FFFF00FF'&quot; " />
+  <Default name="HScrollBar" value="button1normalimage=&quot;file='sysres\listview\hscroll.png' source='0,0,16,16'&quot; button1hotimage=&quot;file='sysres\listview\hscroll.png' source='0,0,16,16' mask='#FFFF00FF'&quot; button1pushedimage=&quot;file='sysres\listview\hscroll.png' source='16,0,32,16' mask='#FFFF00FF'&quot; button1disabledimage=&quot;file='sysres\listview\hscroll.png' source='0,0,16,16' mask='#FFFF00FF'&quot; button2normalimage=&quot;file='sysres\listview\hscroll.png' source='32,0,48,16' mask='#FFFF00FF'&quot; button2hotimage=&quot;file='sysres\listview\hscroll.png' source='32,0,48,16' mask='#FFFF00FF'&quot; button2pushedimage=&quot;file='sysres\listview\hscroll.png' source='48,0,64,16' mask='#FFFF00FF'&quot; button2disabledimage=&quot;file='sysres\listview\hscroll.png' source='32,0,48,16' mask='#FFFF00FF'&quot; thumbnormalimage=&quot;file='sysres\listview\hscroll.png' source='128,0,146,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbhotimage=&quot;file='sysres\listview\hscroll.png' source='128,0,146,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbpushedimage=&quot;ffile='sysres\listview\hscroll.png' source='128,0,146,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbdisabledimage=&quot;file='sysres\listview\hscroll.png' source='128,0,146,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; railnormalimage=&quot;file='sysres\listview\hscroll.png' source='80,0,96,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; railhotimage=&quot;file='sysres\listview\hscroll.png' source='80,0,96,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; railpushedimage=&quot;file='sysres\listview\hscroll.png' source='96,0,112,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; raildisabledimage=&quot;file='sysres\listview\hscroll.png' source='80,0,96,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; bknormalimage=&quot;file='sysres\listview\hscroll.png' source='64,0,80,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkhotimage=&quot;file='sysres\listview\hscroll.png' source='64,0,80,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkpushedimage=&quot;file='sysres\listview\hscroll.png' source='128,0,146,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkdisabledimage=&quot;file='sysres\listview\hscroll.png' source='64,0,80,16' corner='2,2,2,2' mask='#FFFF00FF'&quot; " />
+  <!-- 窗口的初始尺寸(宽800，高600)、窗口的最小尺寸(宽600，高400)、标题栏拖拽区域(高32)、可拖拽边框大小(这里添加sizebox后就可以拖拽边框调整大小了) -->
+  <VerticalLayout>
+    <!-- 整个窗口的背景色 -->
+    <!-- 标题栏区 -->
+    <HorizontalLayout height="32" bkcolor="#FF29C901" bkcolor2="#FF29C901">
+      <!-- 标题栏背景色 bkcolor、bkcolor2、bkcolor3分别是渐变色的三个值-->
+      <VerticalLayout>
+        <Text text="数据围墙管理器" textcolor="#FFFFFFFF" font="0" float="true" pos="27,10,170,30"></Text>
+      </VerticalLayout>
+      <!-- 占空位，占据左边所有的空位-->
+      <VerticalLayout width="38">
+        <Button name="closebtn" tooltip="关闭"   float="true" pos="0,6,25,24" width="26" normalimage=" file='sysres\AutoClose.bmp' " hotimage=" file='sysres\FocusClose.bmp' " pushedimage=" file='sysres\FocusClose.bmp' "/>
+      </VerticalLayout>
+    </HorizontalLayout>
+
+    <!-- 客户区 -->
+    <!--菜单栏-->
+    <HorizontalLayout>
+      <VerticalLayout width="30"  bkcolor="#FFE0E0E0" bkcolor2="#FFE0E0E0"/>
+      <VerticalLayout width="140"  bkcolor="#FFE0E0E0" bkcolor2="#FFE0E0E0">
+        <Option name="OptControlKey" textcolor="#22222222" text="集控设置" font="1" float="true" pos="0,0,0,0" width="140" height="50" bkcolor="#FFE0E0E0" group="OverTab" selected="true" />
+        <Option name="OptFileAccess" text="文件策略" font="1" float="true" pos="0,50,0,0" width="140" height="50" bkcolor="#FFE0E0E0" group="OverTab" />
+        <Option name="OptProcessAccess" text="进程策略" font="1" float="true" pos="0,100,0,0" width="140" height="50" bkcolor="#FFE0E0E0" group="OverTab" />
+        <Option name="OptUserSetting" text="账户设置" font="1" float="true" pos="0,150,0,0" width="140" height="50" bkcolor="#FFE0E0E0" group="OverTab" />
+        <Option name="OptOnlineUser" text="在线用户" font="1" float="true" pos="0,200,0,0" width="140" height="50" bkcolor="#FFE0E0E0" group="OverTab" />
+        <Option name="OptLookLog" text="查看日志" font="1" float="true" pos="0,250,0,0" width="140" height="50" bkcolor="#FFE0E0E0" group="OverTab" />
+      </VerticalLayout>
+      <!--设置栏-->
+      <VerticalLayout>
+        <TabLayout name="TabFrame" float="true" pos="0,0,0,0" width="530" height="470" bkcolor="#FFF6F6F6">
+          <!--集控设置-->
+          <VerticalLayout name="ControlKeyView">
+            <HorizontalLayout height="80"></HorizontalLayout>
+            <HorizontalLayout>
+            <Text text="数据围墙-文件透明加解密程序" font="4" float="true" pos="100,0,500,40"/>
+            <Label name="labKeyId" font="4" text="集控ID" float="true" pos="100,40,500,80" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Label name="labCompany" font="4" text="注册公司" float="true" pos="100,80,500,120" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Label name="labRegTime" font="4" text="注册时间" float="true" pos="100,120,500,160" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Label name="labValidTime" font="4" text="有效时间" float="true" pos="100,160,500,200" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Button name="btnChangePwd" text="修改集控密码" font="2" float="true" pos="300, 200, 0, 0" height="35"/>
+            </HorizontalLayout>
+          </VerticalLayout>
+          <!--文件策略-->
+          <VerticalLayout name="FileAccessView">
+            <HorizontalLayout height="80"/>
+            <HorizontalLayout height="85">
+              <Text text="以下文件后缀无条件加密（以英文”;“分隔）：" font="2" float="true" pos="30,10,500,30"/>
+              <Edit name="edtSuffix" font="2" float="true" pos="30, 45, 500, 77" tooltip="多个后缀以英文逗号分隔" bordercolor="#FF000000" bordersize="1"/>
+            </HorizontalLayout>
+            <HorizontalLayout>
+              <Button name="btnfaSave" text="保存" font="2" float="true" pos="260, 10, 0, 0" height="35"/>
+              <Button name="btnfaCancel" text="取消" font="2" float="true" pos="400, 10, 0, 0" height="35"/>
+            </HorizontalLayout>
+          </VerticalLayout>
+          <!--进程策略-->
+          <VerticalLayout name="ProcessAccessView">
+            <!--占位-->
+            <VerticalLayout height="40">
+            </VerticalLayout>
+            <VerticalLayout>
+              <HorizontalLayout>
+                <!--策略列表-->
+                <HorizontalLayout width="200">
+                  <HorizontalLayout inset="20,20,20,50">
+                    <List name="ProcessAccessList" inset="2,2,2,2" header="hidden" bkcolor="#FFE0E0E0" itemfont="3" itemtextcolor="#FF000000" itembkcolor="#FFE2DDDF" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FF66FF00" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" >
+                    </List>
+                  </HorizontalLayout>
+                  <Button name="btnPaAdd" text="新增" font="2" float="true" pos="45, 290, 0, 0" height="35"/>
+                </HorizontalLayout>
+                
+                <!--策略定义-->
+                <HorizontalLayout>
+                  <RichEdit name="edtProcessName" font="2" float="true" pos="0,20,0,0" width="300" height="150" tooltip="多个进程以英文逗号分隔" bordercolor="#FF222222" bordersize="1"/>
+                  
+                  <Button name="btnPaSave" text="保存" font="2" float="true" pos="70, 190, 0, 0" height="35"/>
+                  <Button name="btnPaCancel" text="取消" font="2" float="true" pos="200, 190, 0, 0" height="35"/>
+                </HorizontalLayout>
+              </HorizontalLayout>
+            </VerticalLayout>
+            <VerticalLayout height="100">
+            </VerticalLayout>
+          </VerticalLayout>
+          <!--账户设置-->
+          <VerticalLayout name="UserSettingView">
+            <HorizontalLayout>
+              <List float="true" pos="30,30,0,0" width="470" height="300" name="UserList" bkcolor="#FFE0E0E0" inset="0,0,0,0" itemshowhtml="true" vscrollbar="true" hscrollbar="true" headerbkimage="file='sysres\listview\list_header_bg.png'" itemalign="center" itembkcolor="#FFE2DDDF" itemaltbk="true" menu="true">
+                <ListHeader height="24" menu="true">
+                  <ListHeaderItem text="用户类型" width="80" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+                  <ListHeaderItem text="用户名称" width="200" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+                </ListHeader>
+              </List>
+            </HorizontalLayout>
+            <HorizontalLayout height="120">
+              <HorizontalLayout>
+              </HorizontalLayout>
+              <HorizontalLayout>
+                <Button name="btnAddUser" text="添加" font="2" float="true" pos="1, 0, 0, 0" height="35"/>
+              </HorizontalLayout>
+              <HorizontalLayout>
+                <Button name="btnChangeUser" text="修改" font="2" float="true" pos="1, 0, 0, 0" height="35"/>
+              </HorizontalLayout>
+              <HorizontalLayout>
+                <Button name="btnDelUser" text="删除" font="2" float="true" pos="1, 0, 0, 0" height="35"/>
+              </HorizontalLayout>
+            </HorizontalLayout>
+          </VerticalLayout>
+          <!--在线用户-->
+          <VerticalLayout name="OnlineUserView">
+            <HorizontalLayout>
+              <List float="true" pos="30,30,0,0" width="470" height="400" name="OnlineUserList" bkcolor="#FFE0E0E0" inset="0,0,0,0" itemshowhtml="true" vscrollbar="true" hscrollbar="true" headerbkimage="file='sysres\listview\list_header_bg.png'" itemalign="center" itembkcolor="#FFE2DDDF" itemaltbk="true" menu="true">
+                <ListHeader height="24" menu="true">
+                  <ListHeaderItem text="用户类型" width="80" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+                  <ListHeaderItem text="用户名称" width="150" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+                  <ListHeaderItem text="计算机名" width="120" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+                  <ListHeaderItem text="IP地址" width="100" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+                  <ListHeaderItem text="MAC地址" width="100" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+                  <ListHeaderItem text="登录时间" width="120" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+                  <ListHeaderItem text="在线时间" width="120" hotimage="file='sysres\listview\list_header_hot.png'" pushedimage="file='sysres\listview\list_header_pushed.png'" sepimage="file='sysres\listview\list_header_sep.png'" sepwidth="1"/>
+                </ListHeader>
+              </List>
+            </HorizontalLayout>
+          </VerticalLayout>
+          <!--查看日志-->
+          <VerticalLayout name="LookLogView">
+            <Text text="暂无日志记录" font="2" float="true" pos="30,10,500,30"/>
+          </VerticalLayout>
+        </TabLayout>
+      </VerticalLayout>
+      <!--右边框-->
+      <VerticalLayout bkcolor="#FFA3A3A3" width="1"/>
+    </HorizontalLayout>
+    <!-- 客户区 -->
+    <!--底边框-->
+    <HorizontalLayout height="1" bkcolor="#FF838383"/>
+  </VerticalLayout>
+  
+</Window>

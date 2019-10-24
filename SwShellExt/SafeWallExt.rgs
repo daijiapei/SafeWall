@@ -1,0 +1,27 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {0631C202-F576-4046-88F2-EA1B4DC3C71A} = s 'SafeWallExt Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{2E27C9B6-B829-4E8B-859B-3D6E66443E5C}'
+			Version = s '1.0'
+		}
+	}
+
+	NoRemove *
+    {
+        NoRemove ShellEx
+        {
+            NoRemove ContextMenuHandlers
+            {
+                ForceRemove {0631C202-F576-4046-88F2-EA1B4DC3C71A} = s '{0631C202-F576-4046-88F2-EA1B4DC3C71A}'
+            }
+        }
+    }
+}

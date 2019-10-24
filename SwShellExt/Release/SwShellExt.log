@@ -1,0 +1,22 @@
+﻿生成启动时间为 2017-09-17 09:56:32。
+     1>项目“F:\project\Transparent_encryption\SafeWall\SwShellExt\SwShellExt.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oy- /D WIN32 /D _WINDOWS /D NDEBUG /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /D _ATL_DLL /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Release\SwShellExt.pch" /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt SafeWallExt.cpp
+         SafeWallExt.cpp
+     1>SafeWallExt.cpp(85): warning C4101: “mii”: 未引用的局部变量
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\project\Transparent_encryption\SafeWall\Release\SwShellExt.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\SwShellExt.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\project\Transparent_encryption\SafeWall\Release\SwShellExt.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /SAFESEH /DLL Release\SwShellExt.res
+         Release\dllmain.obj
+         Release\SafeWallExt.obj
+         Release\stdafx.obj
+         Release\SwShellExt.obj
+         Release\SwShellExt_i.obj
+            正在创建库 F:\project\Transparent_encryption\SafeWall\Release\SwShellExt.lib 和对象 F:\project\Transparent_encryption\SafeWall\Release\SwShellExt.exp
+         SwShellExt.vcxproj -> F:\project\Transparent_encryption\SafeWall\Release\SwShellExt.dll
+       RegisterOutput:
+         regsvr32 /s "F:\project\Transparent_encryption\SafeWall\Release\SwShellExt.dll"
+     1>已完成生成项目“F:\project\Transparent_encryption\SafeWall\SwShellExt\SwShellExt.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:08.25

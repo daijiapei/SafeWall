@@ -1,0 +1,22 @@
+﻿生成启动时间为 2018-07-27 15:05:32。
+     1>项目“F:\project\Transparent_encryption\SafeWall\swfIcoExt\swfIcoExt.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oy- /D WIN32 /D _WINDOWS /D NDEBUG /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /D _ATL_DLL /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt FileIco.cpp
+         FileIco.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\project\Transparent_encryption\SafeWall\Release\swfIcoExt.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\swfIcoExt.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\project\Transparent_encryption\SafeWall\Release\swfIcoExt.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /SAFESEH /DLL Release\swfIcoExt.res
+         Release\accist.obj
+         Release\dllmain.obj
+         Release\FileIco.obj
+         Release\stdafx.obj
+         Release\swfIcoExt.obj
+         Release\swfIcoExt_i.obj
+            正在创建库 F:\project\Transparent_encryption\SafeWall\Release\swfIcoExt.lib 和对象 F:\project\Transparent_encryption\SafeWall\Release\swfIcoExt.exp
+         swfIcoExt.vcxproj -> F:\project\Transparent_encryption\SafeWall\Release\swfIcoExt.dll
+       RegisterOutput:
+         regsvr32 /s "F:\project\Transparent_encryption\SafeWall\Release\swfIcoExt.dll"
+     1>已完成生成项目“F:\project\Transparent_encryption\SafeWall\swfIcoExt\swfIcoExt.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:04.45

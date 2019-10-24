@@ -1,0 +1,42 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {F4E0C1FC-CBCD-4716-A72A-3F4EDEC43B2D} = s 'FileIco Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{4725E654-1EBF-4436-AA4C-BDD7C99465AF}'
+			Version = s '1.0'
+		}
+	}
+}
+
+
+HKLM
+{
+  NoRemove SOFTWARE
+  {
+    NoRemove Microsoft
+    {
+      NoRemove Windows
+      {
+        NoRemove CurrentVersion
+        {
+          NoRemove Explorer
+          {
+            NoRemove ShellIconOverlayIdentifiers
+            {
+              ForceRemove {F4E0C1FC-CBCD-4716-A72A-3F4EDEC43B2D} = s '{F4E0C1FC-CBCD-4716-A72A-3F4EDEC43B2D}'
+              {
+              }           
+            }
+          }
+        }
+      }
+    }
+  }
+}

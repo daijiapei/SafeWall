@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="360,300" mininfo="360,300" maxinfo="360,300" caption="0,0,0,32" sizebox="4,4,4,4">
+  <Font id = "0" name="新宋体" size="13" bold="true" italic="false" underline="false"/>
+  <Font id = "1" name="幼圆" size="17" bold="true" />
+  <Font id = "2" name="宋体" size="14" bold="false" />
+  <Font id = "3" name="微软雅黑" size="16" bold="false" />
+  <Font id = "4" name="宋体" size="16" bold="true" />
+  <Default name="Button" value=" height=&quot;35&quot; width=&quot;102&quot; normalimage=&quot;file=&apos;sysres\button_nor.png&apos;&quot; hotimage=&quot;file=&apos;sysres\button_over.png&apos;&quot; pushedimage=&quot;file=&apos;sysres\button_down.png&apos;&quot; "/>
+  <VerticalLayout bkcolor="#FFE0E0E0">
+    <!-- 整个窗口的背景色 -->
+    <!-- 标题栏区 -->
+    <HorizontalLayout height="32" bkcolor="#FF29C901" bkcolor2="#FF29C901">
+      <!-- 标题栏背景色 bkcolor、bkcolor2、bkcolor3分别是渐变色的三个值-->
+      <VerticalLayout>
+        <Text text="端口监听" textcolor="#FFFFFFFF" font="0" float="true" pos="27,10,170,30"></Text>
+      </VerticalLayout>
+      <!-- 占空位，占据左边所有的空位-->
+      <VerticalLayout width="38">
+        <Button name="closebtn" tooltip="关闭"   float="true" pos="0,6,25,24" width="26" normalimage=" file='sysres\AutoClose.bmp' " hotimage=" file='sysres\FocusClose.bmp' " pushedimage=" file='sysres\FocusClose.bmp' "/>
+      </VerticalLayout>
+    </HorizontalLayout>
+    <!-- 客户区 -->
+    <HorizontalLayout height="30"/>
+    <HorizontalLayout>
+      <VerticalLayout>
+        <VerticalLayout>
+          <Label text="端口：" textcolor="#FF000000" font="0" float="true" pos="40,0,100,30"/>
+          <Edit name="edtPort" font="2" password="true" float="true" pos="120, 0, 310, 28" bordercolor="#FF000000" bordersize="1"/>
+        </VerticalLayout>
+        <VerticalLayout>
+          <Label text="协议：" textcolor="#FF000000" font="0" float="true" pos="40,0,100,30"/>
+          <Combo name="cboProtocol" itemfont ="2" float="true" pos="120,0,310,30" normalimage="file='sysres/Combo_nor.bmp'" hotimage="file='sysres/Combo_over.bmp' " pushedimage="file='sysres/Combo_over.bmp' " >
+            <ListLabelElement font="2" text="TCP" selected="true" />
+            <ListLabelElement font="2" text="UDP" />
+            <ListLabelElement font="2" text="RAM" />
+            <ListLabelElement font="2" text="ALL" />
+          </Combo>
+        </VerticalLayout>
+        <VerticalLayout>
+          <CheckBox name="chkCheckNet" font="0" text="内网验证" selected="true" float="true" pos="40,0,0,0" width="200" height="20" textpadding="20,4,0,0" align="left" selectedimage="file='sysres/checked.png' dest='0,2,16,18'" normalimage="file='sysres/unchecked.png' dest='0,2,16,18'" />
+        </VerticalLayout>
+        <VerticalLayout>
+          <CheckBox name="chkEncryptData" font="0" text="数据加密" selected="true" float="true" pos="40,0,0,0" width="200" height="20" textpadding="20,4,0,0" align="left" selectedimage="file='sysres/checked.png' dest='0,2,16,18'" normalimage="file='sysres/unchecked.png' dest='0,2,16,18'" />
+        </VerticalLayout>
+      </VerticalLayout>
+    </HorizontalLayout>
+    <HorizontalLayout height="70">
+      <Button name="btnSave" text="保存" font="2" float="true" pos="60, 0, 0, 0" height="35"/>
+      <Button name="btnCancel" text="取消" font="2" float="true" pos="200, 0, 0, 0" height="35"/>
+    </HorizontalLayout>
+  </VerticalLayout>
+</Window>

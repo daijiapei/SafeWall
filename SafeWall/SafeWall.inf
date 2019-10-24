@@ -1,0 +1,88 @@
+;--------- Version Section ---------------------------------------------------
+
+[Version]
+Signature="$WINDOWS NT$";
+Provider=数据围墙
+DriverVer=08/28/2017,16.8.3.427
+
+; If device fits one of the standard classes, use the name and GUID here,
+; otherwise create your own device class and GUID as this example shows.
+;{8A9725D7-C9E3-49E0-AF27-71C79F7F9D5E}
+Class=SafeWallDevice
+;ClassGUID={8420334C-B1D0-40C7-B115-CAAF58974BC2}
+ClassGUID= {271445db-596d-47b9-bcad-241f6a7f6155}
+
+;--------- SourceDiskNames and SourceDiskFiles Section -----------------------
+
+; These sections identify source disks and files for installation. They are
+; shown here as an example, but commented out.
+
+[SourceDisksNames]
+1 = "SafeWall",Disk1,,
+
+[SourceDisksFiles]
+SafeWall.sys = 1,
+
+;--------- ClassInstall/ClassInstall32 Section -------------------------------
+
+; Not necessary if using a standard class
+
+; NT Style
+[ClassInstall32]
+Addreg=Class_AddReg
+
+[Class_AddReg]
+HKR,,,,%DeviceClassName%
+HKR,,Icon,,"-5"
+
+;--------- DestinationDirs Section -------------------------------------------
+
+[DestinationDirs]
+YouMark_Files_Driver = 10,System32\Drivers
+
+;--------- Manufacturer and Models Sections ----------------------------------
+
+[Manufacturer]
+%MfgName%=Mfg0
+
+[Mfg0]
+
+; PCI hardware Ids use the form
+; PCI\VEN_aaaa&DEV_bbbb&SUBSYS_cccccccc&REV_dd
+;改成你自己的ID
+%DeviceDesc%=YouMark_DDI, COPY.MYSOFT&SAFEWALL
+
+; --------- Windows NT -----------------
+
+[YouMark_DDI.NT]
+CopyFiles=YouMark_Files_Driver
+AddReg=YouMark_NT_AddReg
+
+[YouMark_DDI.NT.Services]
+Addservice = SafeWall, 0x00000002, YouMark_AddService
+
+[YouMark_AddService]
+DisplayName = %SvcDesc%
+ServiceType = 1 ; SERVICE_KERNEL_DRIVER
+StartType = 3 ; SERVICE_DEMAND_START
+ErrorControl = 1 ; SERVICE_ERROR_NORMAL
+ServiceBinary = %10%\System32\Drivers\SafeWall.sys
+
+[YouMark_NT_AddReg]
+HKLM, "System\CurrentControlSet\Services\SafeWall\Parameters",\
+"BreakOnEntry", 0x00010001, 0
+
+
+; --------- Files (common) -------------
+
+[YouMark_Files_Driver]
+SafeWall.sys
+
+;--------- Strings Section ---------------------------------------------------
+
+[Strings]
+ProviderName="Copy."
+MfgName="Copy_Soft"
+DeviceDesc="SafeWall Filter WDK!"
+DeviceClassName="数据围墙"
+SvcDesc="CopySoft_SafeWall"

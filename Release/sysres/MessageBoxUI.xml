@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="300,160" caption="0,0,0,32" sizebox="4,4,4,4">
+  <Font id = "0" name="新宋体" size="13" bold="true" italic="false" underline="false"/>
+  <Font id = "1" name="幼圆" size="17" bold="true" />
+  <Font id = "2" name="宋体" size="14" bold="false" />
+  <Font id = "3" name="微软雅黑" size="16" bold="false" />
+  <Font id = "4" name="宋体" size="16" bold="true" />
+  <Default name="Button" value=" height=&quot;35&quot; width=&quot;102&quot; normalimage=&quot;file=&apos;sysres\button_nor.png&apos;&quot; hotimage=&quot;file=&apos;sysres\button_over.png&apos;&quot; pushedimage=&quot;file=&apos;sysres\button_down.png&apos;&quot; "/>
+  <VerticalLayout bkcolor="#FFE0E0E0">
+    <!-- 整个窗口的背景色 -->
+    <!-- 标题栏区 -->
+    <HorizontalLayout height="32" bkcolor="#FF29C901" bkcolor2="#FF29C901">
+      <!-- 标题栏背景色 bkcolor、bkcolor2、bkcolor3分别是渐变色的三个值-->
+      <VerticalLayout>
+        <Label name="caption" text="标题" textcolor="#FFFFFFFF" font="0" float="true" pos="27,10,170,30"/>
+      </VerticalLayout>
+      <!-- 占空位，占据左边所有的空位-->
+      <VerticalLayout width="38">
+        <Button name="closebtn" tooltip="关闭"   float="true" pos="0,6,25,24" width="26" normalimage=" file='sysres\AutoClose.bmp' " hotimage=" file='sysres\FocusClose.bmp' " pushedimage=" file='sysres\FocusClose.bmp' "/>
+      </VerticalLayout>
+    </HorizontalLayout>
+    <!-- 客户区 -->
+    <HorizontalLayout height="20"/>
+    <HorizontalLayout>
+        <Label name="notice" text="公告" textcolor="#FF000000" font="0" float="true" pos="40,0,100,30"/>
+    </HorizontalLayout>
+    <HorizontalLayout height="50">
+      <Button name="btnSure" text="确定" font="2" float="true" pos="60, 0, 0, 0" height="35"/>
+      <Button name="btnCancel" text="取消" font="2" float="true" pos="200, 0, 0, 0" height="35"/>
+    </HorizontalLayout>
+  </VerticalLayout>
+</Window>

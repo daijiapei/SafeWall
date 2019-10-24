@@ -1,0 +1,45 @@
+﻿生成启动时间为 2018-08-08 23:57:17。
+     1>项目“F:\project\Transparent_encryption\SafeWall\SafeWall\SafeWall.vcxproj”在节点 2 上(Build 个目标)。
+     1>StampInf:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\stampinf.exe -d "*" -a "x86" -v "*" -k "1.11" -u "1.11.0" -f Win7Debug\SafeWall.inf 
+         Stamping Win7Debug\SafeWall.inf [Version] section with DriverVer=08/08/2018,23.57.17.284
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IWin7Debug\ /Zi /nologo /W2 /WX /Od /Oi /Oy- /D _X86_=1 /D i386=1 /D STD_CALL /D DEPRECATE_DDK_FUNCTIONS=1 /D MSC_NOOPT /D WIN32_LEAN_AND_MEAN=1 /D _WIN32_WINNT=0x0601 /D WINVER=0x0601 /D WINNT=1 /D NTDDI_VERSION=0x06010000 /D DBG=1 /GF /Gm- /Zp8 /GS /Gy /fp:precise /hotpatch /Zc:wchar_t- /Zc:forScope- /GR- /Fo"Win7Debug\\" /Fd"Win7Debug\vc110.pdb" /Gz /wd4748 /wd4603 /wd4627 /wd4986 /wd4987 /wd4996 /FI"C:\Program Files (x86)\Windows Kits\8.0\Include\Shared\warning.h" /analyze- /errorReport:prompt /kernel -cbstring /d1import_no_registry /d2AllowCompatibleILVersions /d2Zi+ MyFileSystemRoutine.cpp
+         MyFileSystemRoutine.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\project\Transparent_encryption\SafeWall\Win7Debug\SafeWall.sys" /VERSION:"6.2" /INCREMENTAL:NO /NOLOGO /WX /FUNCTIONPADMIN:5 /SECTION:"INIT,d" "C:\Program Files (x86)\Windows Kits\8.0\lib\win7\KM\x86\memcmp.lib" "C:\Program Files (x86)\Windows Kits\8.0\lib\win7\KM\x86\BufferOverflowK.lib" "C:\Program Files (x86)\Windows Kits\8.0\lib\win7\KM\x86\ntoskrnl.lib" "C:\Program Files (x86)\Windows Kits\8.0\lib\win7\KM\x86\hal.lib" "C:\Program Files (x86)\Windows Kits\8.0\lib\win7\KM\x86\wmilib.lib" /NODEFAULTLIB /MANIFEST:NO /DEBUG /PDB:"F:\project\Transparent_encryption\SafeWall\Win7Debug\SafeWall.pdb" /SUBSYSTEM:NATIVE,"6.01" /Driver /OPT:REF /OPT:ICF /ENTRY:"DriverEntry" /RELEASE /IMPLIB:"F:\project\Transparent_encryption\SafeWall\Win7Debug\SafeWall.lib" /MERGE:"_TEXT=.text;_PAGE=PAGE" /MACHINE:X86 /SAFESEH /kernel /IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221 /osversion:6.2 /pdbcompress /debugtype:pdata Win7Debug\DriverDirectoryControlDispatchRoutine.obj
+         Win7Debug\DriverQueryInformationDispatchRoutine.obj
+         Win7Debug\DriverSetInformationDispatchRoutin.obj
+         Win7Debug\FileSytemAttachToDevice.obj
+         Win7Debug\CompletionRoutine.obj
+         Win7Debug\DriverCleanUpDispatchRoutine.obj
+         Win7Debug\DriverCloseDispatchRoutine.obj
+         Win7Debug\DriverControlDispatchRoutine.obj
+         Win7Debug\DriverCreateDispatchRoutine.obj
+         Win7Debug\DriverEntry.obj
+         Win7Debug\DriverReadDispatchRoutine.obj
+         Win7Debug\DriverWriteDispatchRoutine.obj
+         Win7Debug\FastIoDispatch.obj
+         Win7Debug\FileSystemCacheClear.obj
+         Win7Debug\FileSystemDeviceControl.obj
+         Win7Debug\GetObjectInformation.obj
+         Win7Debug\GetProcessName.obj
+         Win7Debug\IsShadowCopyVolume.obj
+         Win7Debug\MyFileSystemRoutine.obj
+         Win7Debug\SwProcessList.obj
+         Win7Debug\SwTransformCode.obj
+         Win7Debug\SwTransformFile.obj
+         Win7Debug\SwFileList.obj
+         Win7Debug\test.obj
+         Win7Debug\UserAccess.obj
+         SafeWall.vcxproj -> F:\project\Transparent_encryption\SafeWall\Win7Debug\SafeWall.sys
+       DriverTestSign:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\signtool.exe sign /ph /sha1 "B3C4DAF5AF6DE83DD203C568C857287A0F84D255" 
+         Done Adding Additional Store
+         Successfully signed: F:\project\Transparent_encryption\SafeWall\Win7Debug\SafeWall.sys
+         
+     1>已完成生成项目“F:\project\Transparent_encryption\SafeWall\SafeWall\SafeWall.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.72

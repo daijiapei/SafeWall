@@ -1,0 +1,91 @@
+﻿生成启动时间为 2017-11-30 00:27:43。
+     1>项目“F:\project\Transparent_encryption\SafeWall\DuiLib\DuiLib.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O1 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D UILIB_EXPORTS /D _VC80_UPGRADE=0x0600 /D _WINDLL /D _MBCS /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp".\Build\Release/DuiLib.pch" /Fo".\Build\Release\\" /Fd".\Build\Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt StdAfx.cpp
+         StdAfx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O1 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D UILIB_EXPORTS /D _VC80_UPGRADE=0x0600 /D _WINDLL /D _MBCS /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp".\Build\Release/DuiLib.pch" /Fo".\Build\Release\\" /Fd".\Build\Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt UIlib.cpp Utils\WinImplBase.cpp Utils\UIDelegate.cpp Utils\Utils.cpp Core\UIBase.cpp Core\UIContainer.cpp Core\UIControl.cpp Core\UIDlgBuilder.cpp Core\UIManager.cpp Core\UIMarkup.cpp Core\UIRender.cpp Layout\UIChildLayout.cpp Layout\UIHorizontalLayout.cpp Layout\UITabLayout.cpp Layout\UITileLayout.cpp Layout\UIVerticalLayout.cpp Control\UIActiveX.cpp Control\UIButton.cpp Control\UICheckBox.cpp Control\UICombo.cpp Control\UIComboBox.cpp Control\UIDateTime.cpp Control\UIEdit.cpp Control\UILabel.cpp Control\UIList.cpp Control\UIOption.cpp Control\UIProgress.cpp Control\UIRichEdit.cpp Control\UIScrollBar.cpp Control\UISlider.cpp Control\UIText.cpp Control\UITreeView.cpp Control\UIWebBrowser.cpp
+         UIlib.cpp
+         WinImplBase.cpp
+         UIDelegate.cpp
+         Utils.cpp
+         UIBase.cpp
+         UIContainer.cpp
+         UIControl.cpp
+         UIDlgBuilder.cpp
+         UIManager.cpp
+         UIMarkup.cpp
+         UIRender.cpp
+         UIChildLayout.cpp
+         UIHorizontalLayout.cpp
+         UITabLayout.cpp
+         UITileLayout.cpp
+         UIVerticalLayout.cpp
+         UIActiveX.cpp
+         UIButton.cpp
+         UICheckBox.cpp
+         UICombo.cpp
+         正在生成代码...
+         正在编译...
+         UIComboBox.cpp
+         UIDateTime.cpp
+         UIEdit.cpp
+         UILabel.cpp
+         UIList.cpp
+         UIOption.cpp
+         UIProgress.cpp
+         UIRichEdit.cpp
+         UIScrollBar.cpp
+         UISlider.cpp
+         UIText.cpp
+         UITreeView.cpp
+         UIWebBrowser.cpp
+         正在生成代码...
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O1 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D UILIB_EXPORTS /D _VC80_UPGRADE=0x0600 /D _WINDLL /D _MBCS /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Build\Release\\" /Fd".\Build\Release\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt Utils\stb_image.c
+         stb_image.c
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O1 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D UILIB_EXPORTS /D _VC80_UPGRADE=0x0600 /D _WINDLL /D _MBCS /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Build\Release\\" /Fd".\Build\Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Utils\XUnzip.cpp
+         XUnzip.cpp
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(1137,5): warning MSB8012: TargetPath(F:\project\Transparent_encryption\SafeWall\DuiLib\.\Build\Release\DuiLib.dll) does not match the Linker's OutputFile property value (F:\project\Transparent_encryption\SafeWall\bin\DuiLib.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../bin/DuiLib.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:.\lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST:NO /PDB:".\Build\Release\DuiLib.pdb" /TLBID:1 /BASE:"0x11000000" /DYNAMICBASE /NXCOMPAT /IMPLIB:"../Lib/DuiLib.lib" /MACHINE:X86 /SAFESEH /DLL .\Build\Release\StdAfx.obj
+         .\Build\Release\UIlib.obj
+         .\Build\Release\WinImplBase.obj
+         .\Build\Release\stb_image.obj
+         .\Build\Release\UIDelegate.obj
+         .\Build\Release\Utils.obj
+         .\Build\Release\XUnzip.obj
+         .\Build\Release\UIBase.obj
+         .\Build\Release\UIContainer.obj
+         .\Build\Release\UIControl.obj
+         .\Build\Release\UIDlgBuilder.obj
+         .\Build\Release\UIManager.obj
+         .\Build\Release\UIMarkup.obj
+         .\Build\Release\UIRender.obj
+         .\Build\Release\UIChildLayout.obj
+         .\Build\Release\UIHorizontalLayout.obj
+         .\Build\Release\UITabLayout.obj
+         .\Build\Release\UITileLayout.obj
+         .\Build\Release\UIVerticalLayout.obj
+         .\Build\Release\UIActiveX.obj
+         .\Build\Release\UIButton.obj
+         .\Build\Release\UICheckBox.obj
+         .\Build\Release\UICombo.obj
+         .\Build\Release\UIComboBox.obj
+         .\Build\Release\UIDateTime.obj
+         .\Build\Release\UIEdit.obj
+         .\Build\Release\UILabel.obj
+         .\Build\Release\UIList.obj
+         .\Build\Release\UIOption.obj
+         .\Build\Release\UIProgress.obj
+         .\Build\Release\UIRichEdit.obj
+         .\Build\Release\UIScrollBar.obj
+         .\Build\Release\UISlider.obj
+         .\Build\Release\UIText.obj
+         .\Build\Release\UITreeView.obj
+         .\Build\Release\UIWebBrowser.obj
+            正在创建库 ../Lib/DuiLib.lib 和对象 ../Lib/DuiLib.exp
+         DuiLib.vcxproj -> F:\project\Transparent_encryption\SafeWall\DuiLib\.\Build\Release\DuiLib.dll
+     1>已完成生成项目“F:\project\Transparent_encryption\SafeWall\DuiLib\DuiLib.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:04.51

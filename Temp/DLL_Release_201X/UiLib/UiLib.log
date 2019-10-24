@@ -1,0 +1,67 @@
+﻿生成启动时间为 2017-11-26 14:36:14。
+     1>项目“F:\project\Transparent_encryption\SafeWall\UiLib\UiLib.vcxproj”在节点 2 上(Build 个目标)。
+     1>PreBuildEvent:
+         xcopy .\*.h F:\project\Transparent_encryption\SafeWall\Common\Include\ /E /S /D /Y
+         :VCEnd
+         复制了 0 个文件
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.\ /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /GL /D _DYNAMIC /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D UILIB_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UiLib.pch" /Fo"F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\\" /Fd"F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Control\UILabel.cpp
+         UILabel.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.\ /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /GL /D _DYNAMIC /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D UILIB_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\\" /Fd"F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Utils\stb_image.c Utils\XUnzip.cpp
+         stb_image.c
+         XUnzip.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\project\Transparent_encryption\SafeWall\\Common\DLL_Release_201X\UiLib.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:F:\project\Transparent_encryption\SafeWall\\CommonFile\DLL_Release\ kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\project\Transparent_encryption\SafeWall\\Common\DLL_Release_201X\UiLib.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /BASE:"0x11000000" /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\project\Transparent_encryption\SafeWall\\Common\DLL_Release_201X\UiLib.lib" /MACHINE:X86 /SAFESEH /DLL F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UICalendar.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIGifAnim.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIActiveX.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIAnimation.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIButton.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UICheckBox.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UICombo.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIComboBox.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIEdit.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIFadeButton.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UILabel.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIList.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIOption.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIProgress.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIRichEdit.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIScrollBar.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UISlider.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIText.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UITreeView.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIWebBrowser.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIBase.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIContainer.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIControl.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIDlgBuilder.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIDxAnimation.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIManager.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIMarkup.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIRender.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIChildLayout.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIHorizontalLayout.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UITabLayout.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UITileLayout.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIVerticalLayout.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIlib.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\IWindowBase.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\stb_image.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\UIDelegate.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\Utils.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\WinImplBase.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\DLL_Release_201X\UiLib\XUnzip.obj
+            正在创建库 F:\project\Transparent_encryption\SafeWall\\Common\DLL_Release_201X\UiLib.lib 和对象 F:\project\Transparent_encryption\SafeWall\\Common\DLL_Release_201X\UiLib.exp
+         正在生成代码
+         已完成代码的生成
+         UiLib.vcxproj -> F:\project\Transparent_encryption\SafeWall\\Common\DLL_Release_201X\UiLib.dll
+       PostBuildEvent:
+         xcopy F:\project\Transparent_encryption\SafeWall\UiLib\*.h F:\project\Transparent_encryption\SafeWall\\Common\Include\UiLib\ /E /S /Y /D
+         :VCEnd
+         F:\project\Transparent_encryption\SafeWall\UiLib\Utils\Utils.h
+         复制了 1 个文件
+     1>已完成生成项目“F:\project\Transparent_encryption\SafeWall\UiLib\UiLib.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:04.24

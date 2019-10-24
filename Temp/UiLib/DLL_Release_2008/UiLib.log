@@ -1,0 +1,106 @@
+﻿生成启动时间为 2017-11-30 00:15:00。
+     1>项目“F:\project\Transparent_encryption\SafeWall\UiLib\UiLib.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.\ /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _DYNAMIC /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D UILIB_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UiLib.pch" /Fo"F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\\" /Fd"F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt StdAfx.cpp
+         StdAfx.cpp
+     1>f:\project\transparent_encryption\safewall\uilib\Control/UILabel.h(97): warning C4251: “UiLib::CLabelUI::m_ShadowOffset”: class“Gdiplus::RectF”需要有 dll 接口由 class“UiLib::CLabelUI”的客户端使用
+                 c:\program files (x86)\windows kits\8.0\include\um\GdiplusTypes.h(348) : 参见“Gdiplus::RectF”的声明
+     1>f:\project\transparent_encryption\safewall\uilib\Control/UILabel.h(100): warning C4251: “UiLib::CLabelUI::m_gdiplusStartupInput”: struct“Gdiplus::GdiplusStartupInput”需要有 dll 接口由 class“UiLib::CLabelUI”的客户端使用
+                 c:\program files (x86)\windows kits\8.0\include\um\GdiplusInit.h(43) : 参见“Gdiplus::GdiplusStartupInput”的声明
+     1>f:\project\transparent_encryption\safewall\uilib\Control/UIAnimation.h(76): warning C4251: “UiLib::CUIAnimation::m_arAnimations”: class“std::vector<_Ty>”需要有 dll 接口由 class“UiLib::CUIAnimation”的客户端使用
+                 with
+                 [
+                     _Ty=UiLib::CAnimationData *
+                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.\ /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _DYNAMIC /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D UILIB_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UiLib.pch" /Fo"F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\\" /Fd"F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Control\UIGifAnim.cpp UIlib.cpp Control\UIActiveX.cpp Control\UIAnimation.cpp Control\UIButton.cpp Control\UICalendar.cpp Control\UICheckBox.cpp Control\UICombo.cpp Control\UIComboBox.cpp Control\UIEdit.cpp Control\UIFadeButton.cpp Control\UILabel.cpp Control\UIList.cpp Control\UIOption.cpp Control\UIProgress.cpp Control\UIRichEdit.cpp Control\UIScrollBar.cpp Control\UISlider.cpp Control\UIText.cpp Control\UITreeView.cpp Control\UIWebBrowser.cpp Core\UIBase.cpp Core\UIContainer.cpp Core\UIControl.cpp Core\UIDlgBuilder.cpp Core\UIDxAnimation.cpp Core\UIManager.cpp Core\UIMarkup.cpp Core\UIRender.cpp Layout\UIChildLayout.cpp Layout\UIHorizontalLayout.cpp Layout\UITabLayout.cpp Layout\UITileLayout.cpp Layout\UIVerticalLayout.cpp Utils\IWindowBase.cpp Utils\UIDelegate.cpp Utils\Utils.cpp Utils\WinImplBase.cpp
+         UIGifAnim.cpp
+         UIlib.cpp
+         UIActiveX.cpp
+         UIAnimation.cpp
+         UIButton.cpp
+         UICalendar.cpp
+         UICheckBox.cpp
+         UICombo.cpp
+         UIComboBox.cpp
+         UIEdit.cpp
+         UIFadeButton.cpp
+         UILabel.cpp
+         UIList.cpp
+         UIOption.cpp
+         UIProgress.cpp
+         UIRichEdit.cpp
+         UIScrollBar.cpp
+         UISlider.cpp
+         UIText.cpp
+         UITreeView.cpp
+         正在编译...
+         UIWebBrowser.cpp
+         UIBase.cpp
+         UIContainer.cpp
+         UIControl.cpp
+         UIDlgBuilder.cpp
+         UIDxAnimation.cpp
+         UIManager.cpp
+         UIMarkup.cpp
+         UIRender.cpp
+         UIChildLayout.cpp
+         UIHorizontalLayout.cpp
+         UITabLayout.cpp
+         UITileLayout.cpp
+         UIVerticalLayout.cpp
+         IWindowBase.cpp
+         UIDelegate.cpp
+         Utils.cpp
+         WinImplBase.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.\ /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _DYNAMIC /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D UILIB_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\\" /Fd"F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt Utils\stb_image.c
+         stb_image.c
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.\ /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _DYNAMIC /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D UILIB_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\\" /Fd"F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Utils\XUnzip.cpp
+         XUnzip.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\project\Transparent_encryption\SafeWall\\Common\DLL_Release_2008\UiLib.dll" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"F:\project\Transparent_encryption\SafeWall\\Common\DLL_Release_2008\UiLib.pdb" /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\project\Transparent_encryption\SafeWall\\Common\DLL_Release_2008\UiLib.lib" /MACHINE:X86 /SAFESEH /DLL F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\StdAfx.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIGifAnim.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIlib.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIActiveX.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIAnimation.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIButton.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UICalendar.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UICheckBox.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UICombo.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIComboBox.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIEdit.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIFadeButton.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UILabel.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIList.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIOption.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIProgress.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIRichEdit.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIScrollBar.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UISlider.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIText.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UITreeView.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIWebBrowser.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIBase.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIContainer.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIControl.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIDlgBuilder.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIDxAnimation.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIManager.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIMarkup.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIRender.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIChildLayout.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIHorizontalLayout.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UITabLayout.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UITileLayout.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIVerticalLayout.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\IWindowBase.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\stb_image.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\UIDelegate.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\Utils.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\WinImplBase.obj
+         F:\project\Transparent_encryption\SafeWall\\Temp\UiLib\DLL_Release_2008\XUnzip.obj
+     1>LINK : fatal error LNK1104: 无法打开文件“Riched20.lib”
+     1>已完成生成项目“F:\project\Transparent_encryption\SafeWall\UiLib\UiLib.vcxproj”(Rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:05.57

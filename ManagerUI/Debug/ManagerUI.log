@@ -1,0 +1,81 @@
+﻿生成启动时间为 2018-07-26 18:05:41。
+     1>项目“F:\project\Transparent_encryption\SafeWall\ManagerUI\ManagerUI.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt ..\include\inirw.c ..\include\mysock.c
+         mysock.c
+         inirw.c
+     1>f:\project\transparent_encryption\safewall\include\inirw.c(361): warning C4018: “<”: 有符号/无符号不匹配
+         正在生成代码...
+     1>f:\project\transparent_encryption\safewall\include\mysock.c(27): warning C4716: “myUdpSocket”: 必须返回一个值
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt AddConnectFrameWnd.cpp AddListenFrameWnd.cpp AddProcessItemFrameWnd.cpp AddUserFrameWnd.cpp ChangePwdFrameWnd.cpp Csocket.cpp FrameWnd.cpp LoginFrameWnd.cpp MessageBoxUI.cpp UserAccessFrameWnd.cpp
+         UserAccessFrameWnd.cpp
+         MessageBoxUI.cpp
+         LoginFrameWnd.cpp
+     1>f:\project\transparent_encryption\safewall\managerui\loginframewnd.cpp(46): warning C4800: “LPCTSTR”: 将值强制为布尔值“true”或“false”(性能警告)
+         FrameWnd.cpp
+         Csocket.cpp
+         ChangePwdFrameWnd.cpp
+         AddUserFrameWnd.cpp
+         AddProcessItemFrameWnd.cpp
+         AddListenFrameWnd.cpp
+         AddConnectFrameWnd.cpp
+         正在生成代码...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Debug\ManagerUI.res" ManagerUI.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\project\Transparent_encryption\SafeWall\Debug\ManagerUI.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\project\Transparent_encryption\SafeWall\Debug\ManagerUI.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\project\Transparent_encryption\SafeWall\Debug\ManagerUI.lib" /MACHINE:X86 Debug\ManagerUI.res
+         Debug\inirw.obj
+         Debug\mysock.obj
+         Debug\AddConnectFrameWnd.obj
+         Debug\AddListenFrameWnd.obj
+         Debug\AddProcessItemFrameWnd.obj
+         Debug\AddUserFrameWnd.obj
+         Debug\ChangePwdFrameWnd.obj
+         Debug\Csocket.obj
+         Debug\FrameWnd.obj
+         Debug\LoginFrameWnd.obj
+         Debug\MessageBoxUI.obj
+         Debug\UserAccessFrameWnd.obj
+         json_vc71_libmt.lib(json_value.obj) : 找到 MSIL .netmodule 或使用 /GL 编译的模块；正在使用 /LTCG 重新启动链接；将 /LTCG 添加到链接命令行以改进链接器性能
+     1>LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/LTCG”规范)
+     1>inirw.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:LBR”规范)
+     1>json_vc71_libmt.lib(json_value.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AddConnectFrameWnd.obj 中)
+     1>json_vc71_libmt.lib(json_value.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(AddConnectFrameWnd.obj 中)
+     1>json_vc71_libmt.lib(json_value.obj) : error LNK2005: "public: __thiscall std::locale::id::id(unsigned int)" (??0id@locale@std@@QAE@I@Z) 已经在 msvcprtd.lib(MSVCP110D.dll) 中定义
+     1>json_vc71_libmt.lib(json_reader.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AddConnectFrameWnd.obj 中)
+     1>json_vc71_libmt.lib(json_reader.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(AddConnectFrameWnd.obj 中)
+     1>json_vc71_libmt.lib(json_reader.obj) : error LNK2005: "public: void __thiscall std::_Container_base12::_Orphan_all(void)" (?_Orphan_all@_Container_base12@std@@QAEXXZ) 已经在 msvcprtd.lib(MSVCP110D.dll) 中定义
+     1>json_vc71_libmt.lib(json_reader.obj) : error LNK2005: "public: __thiscall std::_Container_base12::~_Container_base12(void)" (??1_Container_base12@std@@QAE@XZ) 已经在 msvcprtd.lib(MSVCP110D.dll) 中定义
+     1>json_vc71_libmt.lib(json_reader.obj) : error LNK2005: "public: __thiscall std::_Container_base12::_Container_base12(void)" (??0_Container_base12@std@@QAE@XZ) 已经在 msvcprtd.lib(MSVCP110D.dll) 中定义
+     1>json_vc71_libmt.lib(json_writer.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AddConnectFrameWnd.obj 中)
+     1>json_vc71_libmt.lib(json_writer.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(locale0.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(locale0.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(ios.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(ios.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(uncaught.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(uncaught.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(iomanip.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(iomanip.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(iosptrs.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(iosptrs.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(locale.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(locale.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(xlock.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(xlock.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(xthrow.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(xthrow.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(wlocale.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(wlocale.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(xlocale.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(xlocale.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(xdateord.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AddConnectFrameWnd.obj 中)
+     1>libcpmt.lib(xdateord.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MT_StaticRelease”不匹配值“MDd_DynamicDebug”(AddConnectFrameWnd.obj 中)
+     1>LINK : warning LNK4098: 默认库“MSVCRTD”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: 默认库“libcmt.lib”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+     1>F:\project\Transparent_encryption\SafeWall\Debug\ManagerUI.exe : fatal error LNK1169: 找到一个或多个多重定义的符号
+     1>已完成生成项目“F:\project\Transparent_encryption\SafeWall\ManagerUI\ManagerUI.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:16.81
